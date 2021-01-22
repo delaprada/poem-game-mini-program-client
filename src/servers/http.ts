@@ -23,7 +23,7 @@ class httpRequest {
       method: method,
       header: {
         'content-type': contentType,
-        Authorization: Taro.getStorageSync('Authorization'),
+        Authorization: Taro.getStorageSync('token'),
       },
     };
     return Taro.request(option);

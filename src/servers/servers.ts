@@ -5,14 +5,19 @@ const getResData = () => {
   return HTTPREQUEST.get('/');
 };
 
-const getSkey = (code) => {
+const getToken = (code, userInfo) => {
   return HTTPREQUEST.post(
     '/login',
     {
       code: code,
+      userInfo: userInfo,
     },
     'application/json'
   );
 };
 
-export { getResData, getSkey };
+const getRequest = () => {
+  return HTTPREQUEST.get('/request');
+};
+
+export { getResData, getToken, getRequest };
