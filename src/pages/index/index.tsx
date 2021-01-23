@@ -40,30 +40,19 @@ function Index() {
       .then((res) => {
         if (res.code) {
           console.log('code为' + res.code);
+
+          // 将code和userInfo发送到后台，以获取token
           getToken(res.code, userInfo)
             .then((token) => {
               console.log('获取token');
               console.log(token);
+
+              // 将token存储到Storage中
               Taro.setStorageSync('token', token);
             })
-            .catch((err2) => {
-              console.error(err2);
+            .catch((err) => {
+              console.error(err);
             });
-          // Taro.request({
-          //   url: 'http://127.0.0.1:7001/login',
-          //   data: {
-          //     code: res.code,
-          //   },
-          //   method: 'POST',
-          // })
-          //   .then((res2) => {
-          //     console.log('获取session_key+openid');
-          //     const skey = res2.data;
-          //     Taro.setStorageSync('skey', skey);
-          //   })
-          //   .catch((err2) => {
-          //     console.error(err2);
-          //   });
         } else {
           console.log('登录失败! ' + res.errMsg);
         }
@@ -72,33 +61,6 @@ function Index() {
         console.error(err);
       });
   };
-
-  // const handleClick = () => {
-  //   // 获取skey
-  //   const loginFlag = Taro.getStorageSync('token');
-
-  //   if (loginFlag) {
-  //     console.log('存在skey');
-
-  //     // 检查session是否过期
-  //     Taro.checkSession({})
-  //       .then((res) => {
-  //         console.log(res);
-  //         console.log('session没过期，不用重新登录');
-  //         console.log('skey为' + loginFlag);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //         console.log('session已过期，要重新登录');
-
-  //         // 重新登录
-  //         login();
-  //       });
-  //   } else {
-  //     console.log('不存在token，要登录');
-  //     login();
-  //   }
-  // };
 
   const getUserInfo = (e) => {
     const userInfo = e.detail.userInfo;
@@ -134,7 +96,7 @@ function Index() {
 
   const handleRequest = () => {
     getRequest();
-  }
+  };
 
   const userDesc = () => {
     return (
