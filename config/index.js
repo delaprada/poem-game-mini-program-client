@@ -28,6 +28,7 @@ const config = {
     '@components': resolve(__dirname, '..', 'src/components'),
     '@pages': resolve(__dirname, '..', 'src/pages'),
     '@store': resolve(__dirname, '..', 'src/store'),
+    '@utils': resolve(__dirname, '..', 'src/utils'),
   },
   mini: {
     postcss: {

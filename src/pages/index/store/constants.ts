@@ -1,0 +1,1 @@
+export const CHANGE_USER_INFO = 'index/CHANGE_USER_INFO';

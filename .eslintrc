@@ -1,0 +1,48 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "indent": "off",
+    "new-cap": "off",
+    "newline-after-var": "off",
+    "no-invalid-this": "off",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "guard-for-in": "off",
+    "no-console": "off",
+    "no-undefined": "off",
+    "array-bracket-spacing": "off",
+    "no-unused-expressions": "off",
+    "linebreak-style": "off",
+    "func-style": "off",
+    "comma-dangle": [ "warn", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }]
+  },
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "EASY_ENV_IS_PROD": true,
+    "EASY_ENV_IS_NODE": true,
+    "EASY_ENV_IS_BROWSER": true,
+    "EASY_ENV_IS_DEV": true
+  }
+}

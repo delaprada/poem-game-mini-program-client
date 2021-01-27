@@ -1,10 +1,29 @@
 // 拦截器
 import Taro from '@tarojs/taro';
 import { HTTP_STATUS } from './config';
-// import { pageToLogin } from "./utils";
+import { login } from '@utils';
+
+function check() {
+  // 检查session是否过期
+  Taro.checkSession({})
+    .then((res) => {
+      console.log(res);
+      console.log('session没过期，不用重新登录');
+    })
+    .catch(async (err) => {
+      console.log(err);
+      console.log('session已过期，要重新登录');
+
+      // 重新登录
+      await login();
+    });
+}
 
 const customInterceptor = (chain) => {
   const requestParams = chain.requestParams;
+
+  // 检查session是否过期
+  check();
 
   return chain.proceed(requestParams).then((res) => {
     // 只要请求成功，不管返回什么状态码，都走这个回调
@@ -14,37 +33,23 @@ const customInterceptor = (chain) => {
       case HTTP_STATUS.BAD_GATEWAY:
         return Promise.reject('服务端出现了问题');
       case HTTP_STATUS.FORBIDDEN: {
-        Taro.setStorageSync('Authorization', '');
+        Taro.setStorageSync('token', '');
         // pageToLogin();
         // TODO 根据自身业务修改
         return Promise.reject('没有权限访问');
       }
       case HTTP_STATUS.AUTHENTICATE: {
-        Taro.setStorageSync('Authorization', '');
-        // pageToLogin();
+        Taro.setStorageSync('token', '');
+
+        // 跳转到重新登录页面
+        Taro.switchTab({
+          url: '/pages/reLogin/reLogin',
+        });
         return Promise.reject('需要鉴权');
       }
       case HTTP_STATUS.SUCCESS:
         return res.data;
     }
-
-    // 只要请求成功，不管返回什么状态码，都走这个回调
-    // if (res.statusCode === HTTP_STATUS.NOT_FOUND) {
-    //   return Promise.reject('请求资源不存在');
-    // } else if (res.statusCode === HTTP_STATUS.BAD_GATEWAY) {
-    //   return Promise.reject('服务端出现了问题');
-    // } else if (res.statusCode === HTTP_STATUS.FORBIDDEN) {
-    //   Taro.setStorageSync('Authorization', '');
-    //   // pageToLogin();
-    //   // TODO 根据自身业务修改
-    //   return Promise.reject('没有权限访问');
-    // } else if (res.statusCode === HTTP_STATUS.AUTHENTICATE) {
-    //   Taro.setStorageSync('Authorization', '');
-    //   // pageToLogin();
-    //   return Promise.reject('需要鉴权');
-    // } else if (res.statusCode === HTTP_STATUS.SUCCESS) {
-    //   return res.data;
-    // }
   });
 };
 

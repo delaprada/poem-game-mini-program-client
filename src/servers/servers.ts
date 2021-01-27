@@ -5,12 +5,11 @@ const getResData = () => {
   return HTTPREQUEST.get('/');
 };
 
-const getToken = (code, userInfo) => {
+const getToken = (code) => {
   return HTTPREQUEST.post(
     '/login',
     {
       code: code,
-      userInfo: userInfo,
     },
     'application/json'
   );
@@ -20,4 +19,14 @@ const getRequest = () => {
   return HTTPREQUEST.get('/request');
 };
 
-export { getResData, getToken, getRequest };
+const postUserInfo = (userInfo) => {
+  return HTTPREQUEST.post(
+    '/userInfo',
+    {
+      userInfo: userInfo,
+    },
+    'application/json'
+  );
+};
+
+export { getResData, getToken, getRequest, postUserInfo };
