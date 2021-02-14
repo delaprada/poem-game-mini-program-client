@@ -13,10 +13,6 @@ class httpRequest {
     let contentType = 'application/json';
     contentType = params.contentType || contentType;
 
-    console.log(url);
-    console.log(data);
-    console.log(contentType);
-
     const option = {
       url: BASE_URL + url,
       data: data,

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { View, Text } from '@tarojs/components';
 import { login } from '@utils';
 
-import './index.less';
+// import './index.less';
 
 function Index() {
   useEffect(() => {
@@ -13,7 +13,7 @@ function Index() {
   }, []);
 
   return (
-    <View className="index">
+    <View>
       <View>
         <Text>首页自动登录</Text>
       </View>

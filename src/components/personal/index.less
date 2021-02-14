@@ -1,0 +1,107 @@
+@import '../../assets/global-style.less';
+
+.personal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .top {
+    position: relative;
+    height: 400rpx;
+
+    .background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.6;
+      filter: blur(15px);
+      overflow: hidden;
+
+      &.layer {
+        background: @black-deep;
+        opacity: 0.5;
+        filter: none;
+      }
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 120rpx;
+      left: 50rpx;
+
+      .avatar {
+        margin-right: 40rpx;
+      }
+
+      .username {
+        color: @whitesmoke;
+      }
+    }
+
+    .info {
+      display: flex;
+      position: absolute;
+      top: 250rpx;
+      left: 50rpx;
+      width: 80%;
+      color: @whitesmoke;
+
+      .like {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .collect {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .composition {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+
+  .dynamic {
+    flex: 1;
+    background-color: @gainsboro;
+
+    // 利用css > 只选择一代content解决类名相同冲突问题
+    & >.content {
+      margin: 20rpx auto;
+      padding: 20rpx 30rpx;
+      width: 85%;
+      border-radius: 10rpx;
+      background-color: #fff;
+
+      .title {
+        margin-bottom: 20rpx;
+      }
+
+      .decorate {
+        display: inline-block;
+        margin-right: 10rpx;
+        width: 6rpx;
+        height: 20rpx;
+        border-radius: 3rpx;
+        background-color: @color-brand;
+      }
+
+      .item {
+        font-size: @font-size-base;
+      }
+    }
+  }
+}

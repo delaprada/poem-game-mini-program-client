@@ -1,0 +1,128 @@
+@import '../../assets/global-style.less';
+
+.home-container {
+  background-color: @gainsboro;
+
+  .top {
+    background-color: #fff;
+
+    .daily {
+      padding: 30rpx 30rpx;
+      background-image: url('../../assets/images/homebg.jpg');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+
+      .date {
+        display: flex;
+        justify-content: space-between;
+
+        .v-time {
+          font-size: 32rpx;
+          writing-mode: vertical-rl;
+          direction: rtl;
+          float: right;
+          letter-spacing: 2px;
+        }
+      }
+
+      .content {
+      }
+    }
+
+    .search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 120rpx;
+
+      .search-box {
+        padding: 0 10rpx;
+        width: 80%;
+        height: 50rpx;
+        border: 2rpx solid @grey;
+        border-radius: 25rpx;
+
+        .placeholder {
+          margin-left: 15rpx;
+          font-size: @font-size-base;
+          color: @grey;
+        }
+      }
+    }
+  }
+
+  .recommend {
+    margin-top: 30rpx;
+    padding-bottom: 30rpx;
+    background-color: #fff;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 20rpx 0;
+      width: 90%;
+      .title {
+        display: flex;
+        align-items: center;
+
+        .content {
+          padding-left: 8rpx;
+          font-weight: @font-weight-bold;
+        }
+      }
+      .change {
+        display: flex;
+        align-items: center;
+
+        .content {
+          padding-right: 8rpx;
+          font-size: @font-size-small;
+          color: @grey-dim;
+        }
+      }
+    }
+
+    .recommend-list {
+      margin: 0 auto;
+      width: 90%;
+
+      .item-content__info-title {
+        font-size: @font-size-base;
+      }
+
+      .item-content__info-note {
+        font-size: @font-size-small;
+      }
+    }
+  }
+
+  .collection {
+    margin-top: 30rpx;
+    padding-bottom: 30rpx;
+    background-color: #fff;
+
+    .header {
+      margin: 0 auto;
+      padding: 20rpx 0;
+      width: 90%;
+
+      .title {
+        display: flex;
+        align-items: center;
+
+        .content {
+          padding-left: 8rpx;
+          font-weight: @font-weight-bold;
+        }
+      }
+    }
+
+    .collection-list {
+      display: flex;
+      margin: 0 auto;
+      padding: 20rpx 0;
+      width: 90%;
+    }
+  }
+}

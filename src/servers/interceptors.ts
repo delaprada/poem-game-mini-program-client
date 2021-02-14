@@ -19,7 +19,7 @@ function check() {
     });
 }
 
-const customInterceptor = (chain) => {
+const customInterceptor = async (chain) => {
   const requestParams = chain.requestParams;
 
   // 检查session是否过期

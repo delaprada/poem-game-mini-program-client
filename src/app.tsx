@@ -1,4 +1,5 @@
-import 'taro-ui/dist/style/index.scss';
+// 自定义主题颜色，因taro样式是sass所以需要引入scss文件
+import './custom-theme.scss';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import configStore from './store';

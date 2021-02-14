@@ -1,0 +1,21 @@
+@import '../../assets/global-style.less';
+
+.item-container {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin: 0 40rpx;
+  padding: 20rpx 5rpx;
+  border-top: 5rpx solid @gray-lighter;
+
+  .item {
+    font-size: 32rpx;
+    writing-mode: vertical-lr;
+    letter-spacing: 2px;
+  }
+
+  .desc {
+    font-size: @font-size-small;
+    color: @grey-dim;
+  }
+}

@@ -1,0 +1,70 @@
+@import '../../assets/global-style.less';
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .image {
+    width: 750rpx;
+  }
+  
+  .content {
+    flex: 1;
+    position: relative;
+    padding: 20rpx 30rpx;
+  }
+  
+  .title-container {
+    margin-bottom: 40rpx;
+  
+    .title {
+      margin-bottom: 20rpx;
+      font-size: @font-size-large;
+      font-weight: @font-weight-bold;
+      letter-spacing: 5rpx;
+    }
+  
+    .subtitle {
+      font-size: @font-size-base;
+      .login {
+        color: @color-brand;
+      }
+    }
+  }
+  
+  .desc {
+    font-size: @font-size-base;
+    color: @desc-color;
+    ::before {
+      content: '•';
+      padding-right: 10rpx;
+    }
+  }
+  
+  .radio-container {
+    margin-top: 40rpx;
+    .radio {
+      color: @color-brand;
+      transform: scale(0.55);
+    }
+  }
+  
+  .radio-text {
+    font-size: @font-size-base;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 60rpx;
+  
+    .button {
+      width: 40%;
+    }
+  }
+}

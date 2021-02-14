@@ -19,9 +19,17 @@ const getRequest = () => {
   return HTTPREQUEST.get('/request');
 };
 
+const getPersonalInfo = () => {
+  return HTTPREQUEST.get('/personal');
+};
+
+const getSentence = () => {
+  return HTTPREQUEST.get('/sentence');
+};
+
 const postUserInfo = (userInfo) => {
   return HTTPREQUEST.post(
-    '/userInfo',
+    '/postInfo',
     {
       userInfo: userInfo,
     },
@@ -29,4 +37,11 @@ const postUserInfo = (userInfo) => {
   );
 };
 
-export { getResData, getToken, getRequest, postUserInfo };
+export {
+  getResData,
+  getToken,
+  getRequest,
+  getPersonalInfo,
+  getSentence,
+  postUserInfo,
+};
