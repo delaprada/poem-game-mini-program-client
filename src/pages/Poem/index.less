@@ -1,0 +1,89 @@
+@import '../../assets/global-style.less';
+
+.poem-container {
+  .poem {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30rpx;
+
+    .title {
+      font-size: @font-size-large;
+    }
+
+    .author {
+      margin-top: 20rpx;
+      font-size: @font-size-base;
+
+      .dynasty {
+        color: @black-light;
+      }
+
+      .name {
+        margin-left: 5rpx;
+        color: @color-brand;
+      }
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 20rpx;
+      font-size: @font-size-middle;
+      color: @black-light;
+    }
+
+    .action-list {
+      display: flex;
+      justify-content: center;
+      margin-top: 40rpx;
+      width: 80%;
+      font-size: @font-size-base;
+
+      .action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+
+        .name {
+          margin-left: 1rpx;
+        }
+      }
+    }
+  }
+
+  .author-detail {
+    display: relative;
+    margin: 100rpx auto;
+    width: 80%;
+    font-size: @font-size-base;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+
+      .name {
+        color: @color-brand;
+      }
+
+      .more {
+        color: @grey-dim;
+        &::after {
+          content: '>',
+        }
+      }
+    }
+
+    .intro {
+      margin-top: 20rpx;
+      color: @black-light;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

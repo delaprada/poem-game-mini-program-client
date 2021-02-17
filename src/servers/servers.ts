@@ -33,23 +33,54 @@ const getRecommend = () => {
 
 const getPoemDetail = (id, category) => {
   return HTTPREQUEST.get('/poem', {
-    id: id, 
+    id: id,
     category: category,
   });
 };
 
 const getAuthorDetail = (id, category) => {
   return HTTPREQUEST.get('/author', {
-    id: id, 
+    id: id,
     category: category,
   });
-}
+};
+
+const getDynamic = (composition_id, category) => {
+  return HTTPREQUEST.get('/dynamic', {
+    composition_id: composition_id,
+    category: category,
+  });
+};
 
 const postUserInfo = (userInfo) => {
   return HTTPREQUEST.post(
     '/postInfo',
     {
       userInfo: userInfo,
+    },
+    'application/json'
+  );
+};
+
+const postLike = (composition_id, category, status) => {
+  return HTTPREQUEST.post(
+    '/like',
+    {
+      composition_id: composition_id,
+      category: category,
+      status: status,
+    },
+    'application/json'
+  );
+};
+
+const postCollect = (composition_id, category, status) => {
+  return HTTPREQUEST.post(
+    '/collect',
+    {
+      composition_id: composition_id,
+      category: category,
+      status: status,
     },
     'application/json'
   );
@@ -64,5 +95,8 @@ export {
   getRecommend,
   getPoemDetail,
   getAuthorDetail,
+  getDynamic,
   postUserInfo,
+  postLike,
+  postCollect,
 };

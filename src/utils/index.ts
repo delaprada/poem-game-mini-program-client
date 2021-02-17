@@ -35,6 +35,32 @@ const login = () => {
     });
 };
 
+function check() {
+  // 检查session是否过期
+  Taro.checkSession({})
+    .then((res) => {
+      console.log(res);
+      console.log('session没过期，不用重新登录');
+    })
+    .catch(async (err) => {
+      console.log(err);
+      console.log('session已过期，要重新登录');
+
+      // 重新登录
+      await login();
+    });
+}
+
+const checkLogin = () => {
+  const userInfo = Taro.getStorageSync('userInfo');
+
+  if(!userInfo) {
+    return false;
+  }
+
+  return true;
+}
+
 const add0 = (m) => {
   return m < 10 ? '0' + m : m;
 };
@@ -70,15 +96,19 @@ const getTitle = (item) => {
   switch (dynamic_type) {
     case 0: {
       dynamic_type = '喜欢';
+      break;
     }
     case 1: {
       dynamic_type = '收藏';
+      break;
     }
     case 2: {
       dynamic_type = '朗诵';
+      break;
     }
     default:
       dynamic_type = '喜欢';
+      break;
   }
 
   switch (category) {
@@ -151,9 +181,9 @@ const getDynasty = (dynasty) => {
   if (!dynasty) {
     return '';
   } else if (dynasty === 'S') {
-    return '宋';
+    return '[宋]';
   } else if (dynasty === 'T') {
-    return '唐';
+    return '[唐]';
   }
 };
 
@@ -165,4 +195,13 @@ const getIntro = (authorInfo) => {
   }
 };
 
-export { login, getTitle, formatDateToMb, isEmptyObject, getDynasty, getIntro };
+export {
+  login,
+  check,
+  checkLogin,
+  getTitle,
+  formatDateToMb,
+  isEmptyObject,
+  getDynasty,
+  getIntro,
+};

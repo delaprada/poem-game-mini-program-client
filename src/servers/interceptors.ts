@@ -1,23 +1,7 @@
 // 拦截器
 import Taro from '@tarojs/taro';
 import { HTTP_STATUS } from './config';
-import { login } from '@utils';
-
-function check() {
-  // 检查session是否过期
-  Taro.checkSession({})
-    .then((res) => {
-      console.log(res);
-      console.log('session没过期，不用重新登录');
-    })
-    .catch(async (err) => {
-      console.log(err);
-      console.log('session已过期，要重新登录');
-
-      // 重新登录
-      await login();
-    });
-}
+import { check } from '@utils/index';
 
 const customInterceptor = async (chain) => {
   const requestParams = chain.requestParams;
