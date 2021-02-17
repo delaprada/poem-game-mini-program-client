@@ -25,7 +25,7 @@ class httpRequest {
     return Taro.request(option);
   }
 
-  get(url: string, data = '') {
+  get(url: string, data: any = '') {
     let option = { url, data };
     return this.baseOptions(option);
   }

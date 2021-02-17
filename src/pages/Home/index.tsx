@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Taro from '@tarojs/taro';
-import { View, Text, Image } from '@tarojs/components';
+import { View, Text } from '@tarojs/components';
 import { login, formatDateToMb } from '@utils';
 import { getSentence } from '@servers/servers';
 import { AtIcon, AtList, AtListItem } from 'taro-ui';
 import VerticalItem from '@baseUI/vertical-item';
-import { collectionList } from '@utils/config';
+import List from '@components/list';
+import { collectionList, supList } from '@utils/config';
+import { getRecommend } from '@servers/servers';
 
 import './index.less';
 
 function Home() {
   const [date, setDate] = useState([]);
+  const [recommendList, setRecommendList] = useState([]);
+  const [curList, setCurList] = useState([]);
+  const [index, setIndex] = useState(3);
   const [content, setContent] = useState('');
 
   useEffect(() => {
@@ -27,6 +32,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
+    // 获取每日一句
     getSentence()
       .then((res) => {
         const dailyContent = res[0].content;
@@ -38,6 +44,18 @@ function Home() {
 
     const currentDate = formatDateToMb();
     setDate(currentDate);
+
+    // 获取热门推荐
+    getRecommend()
+      .then((res) => {
+        const len = res.length;
+        const list = res.concat(supList.slice(0, 15 - len));
+        setRecommendList(list);
+        setCurList(list.slice(index - 3, index));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   const handleClick = () => {
@@ -46,11 +64,25 @@ function Home() {
     });
   };
 
+  const handleChange = () => {
+    let curIndex = index + 3;
+
+    if (curIndex <= 15) {
+      const list = recommendList.slice(curIndex - 3, curIndex);
+      setCurList(list);
+    } else {
+      curIndex = 3;
+      const list = recommendList.slice(curIndex - 3, curIndex);
+      setCurList(list);
+    }
+
+    setIndex(curIndex);
+  };
+
   return (
     <View className="home-container">
       <View className="top">
         <View className="daily">
-          {/* <Image className="background-image" src={homePic}></Image> */}
           <View className="date">
             <View>
               <View className="title">每日一诗</View>
@@ -76,17 +108,24 @@ function Home() {
             <AtIcon value="list" size="16" color="#597ef7"></AtIcon>
             <Text className="content">热门推荐</Text>
           </View>
-          <View className="change">
+          <View className="change" onClick={handleChange}>
             <Text className="content">换一批</Text>
             <AtIcon value="reload" size="10" color="#666"></AtIcon>
           </View>
         </View>
         <View className="recommend-list">
-          <AtList>
-            <AtListItem className="item" title="标题文字" note="描述信息" />
-            <AtListItem className="item" title="标题文字" note="描述信息" />
-            <AtListItem className="item" title="标题文字" note="描述信息" />
-          </AtList>
+          {/* <AtList> */}
+          {curList.length > 0 && <List list={curList} show={false} />}
+          {/* {curList.map((item: any) => {
+              return (
+                <AtListItem
+                  className="item"
+                  title={item.title}
+                  note={item.author}
+                />
+              );
+            })} */}
+          {/* </AtList> */}
         </View>
       </View>
       <View className="collection">
@@ -97,7 +136,9 @@ function Home() {
           </View>
         </View>
         <View className="collection-list">
-          {collectionList.map((item) => <VerticalItem item={item} />)}
+          {collectionList.map((item) => (
+            <VerticalItem item={item} />
+          ))}
         </View>
       </View>
     </View>

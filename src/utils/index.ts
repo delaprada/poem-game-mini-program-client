@@ -6,7 +6,7 @@ const login = () => {
     .then((res) => {
       if (res.code) {
         // 将code发送到后台，以获取token
-        console.log('get code!');
+        console.log(res.code);
         getToken(res.code)
           .then((res) => {
             const { token } = res;
@@ -37,7 +37,7 @@ const login = () => {
 
 const add0 = (m) => {
   return m < 10 ? '0' + m : m;
-}
+};
 
 const format = (shijianchuo) => {
   //shijianchuo是整数，否则要parseInt转换
@@ -49,11 +49,7 @@ const format = (shijianchuo) => {
   // var mm = time.getMinutes();
   // var s = time.getSeconds();
   return (
-    y +
-    '-' +
-    add0(m) +
-    '-' +
-    add0(d)
+    y + '-' + add0(m) + '-' + add0(d)
     // ' ' +
     // add0(h) +
     // ':' +
@@ -61,15 +57,10 @@ const format = (shijianchuo) => {
     // ':' +
     // add0(s)
   );
-}
+};
 
 const getTitle = (item) => {
-  let {
-    dynamic_type,
-    category,
-    record_id,
-    exec_time,
-  } = item;
+  let { dynamic_type, category, record_id, exec_time } = item;
 
   const userInfo = Taro.getStorageSync('userInfo');
   const nickName = userInfo.nickName;
@@ -109,7 +100,7 @@ const getTitle = (item) => {
 
   exec_time = format(exec_time);
 
-  if(!record_id) {
+  if (!record_id) {
     resStr = `${nickName} ${dynamic_type}了这篇${category}`;
   } else {
     resStr = `${nickName} 朗诵了这篇${category}`;
@@ -123,16 +114,55 @@ const getTitle = (item) => {
 
 const formatDateToMb = () => {
   let date = new Date();
-  let mb_str = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+  let mb_str = [
+    '零',
+    '一',
+    '二',
+    '三',
+    '四',
+    '五',
+    '六',
+    '七',
+    '八',
+    '九',
+    '十',
+    '十一',
+    '十二',
+  ];
   let y = date.getFullYear().toString();
   let Y = '';
   let m = date.getMonth() + 1;
   let M = mb_str[m] + '月';
   let d = date.getDate();
   for (let i = 0; i < y.split('').length; i++) {
-      Y = Y + mb_str[y.split('')[i]]
+    Y = Y + mb_str[y.split('')[i]];
   }
   return [Y, M, d];
 };
 
-export { login, getTitle, formatDateToMb };
+const isEmptyObject = (obj) => {
+  if (Object.keys(obj).length === 0) {
+    return true;
+  }
+  return false;
+};
+
+const getDynasty = (dynasty) => {
+  if (!dynasty) {
+    return '';
+  } else if (dynasty === 'S') {
+    return '宋';
+  } else if (dynasty === 'T') {
+    return '唐';
+  }
+};
+
+const getIntro = (authorInfo) => {
+  if (authorInfo.intro) {
+    return authorInfo.intro;
+  } else {
+    return authorInfo.intro_s;
+  }
+};
+
+export { login, getTitle, formatDateToMb, isEmptyObject, getDynasty, getIntro };

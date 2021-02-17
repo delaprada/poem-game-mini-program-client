@@ -6,7 +6,7 @@ import { getTitle } from '@utils';
 import './index.less';
 
 function List(props) {
-  const { list } = props;
+  const { list, show } = props;
 
   const getDynamicDesc = (item) => {
     const { resStr, exec_time } = getTitle(item);
@@ -20,13 +20,22 @@ function List(props) {
   };
 
   const listItem = (item, show) => {
-    let { title, content, author } = item.detail;
+    let { id, category, title, content, author } = item.detail || item;
     content = content.replace(/\|/g, '');
+
+    const handleClick = (id, category) => {
+      Taro.navigateTo({
+        url: `/pages/Poem/index?id=${id}&category=${category}`,
+      })
+    };
 
     return (
       <View className="item-container">
         {show ? <View>{getDynamicDesc(item)}</View> : null}
-        <View className="item-content" hoverClass="hover-style">
+        <View
+          className="item-content"
+          hoverClass="hover-style"
+          onClick={() => handleClick(id, category)}>
           <View className="profile">
             <Text className="title">{title}</Text>
             <Text className="author">{author}</Text>
@@ -38,9 +47,9 @@ function List(props) {
   };
 
   return (
-    <View>
+    <View className="list-container">
       {list.map((item) => {
-        return <View>{listItem(item, true)}</View>;
+        return <View>{listItem(item, show)}</View>;
       })}
     </View>
   );

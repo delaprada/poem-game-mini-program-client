@@ -62,15 +62,11 @@ function Personal(props) {
             <View className="decorate"></View>
             动态
           </View>
-          <View>{dynamicList.length > 0 && <List list={dynamicList} />}</View>
+          <View>{dynamicList.length > 0 && <List list={dynamicList} show={true} />}</View>
         </View>
       </View>
     </View>
   );
 }
-
-Personal.options = {
-  styleIsolation: 'isolated',
-};
 
 export default React.memo(Personal);

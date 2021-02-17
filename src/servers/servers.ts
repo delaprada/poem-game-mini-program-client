@@ -27,6 +27,24 @@ const getSentence = () => {
   return HTTPREQUEST.get('/sentence');
 };
 
+const getRecommend = () => {
+  return HTTPREQUEST.get('/recommend');
+};
+
+const getPoemDetail = (id, category) => {
+  return HTTPREQUEST.get('/poem', {
+    id: id, 
+    category: category,
+  });
+};
+
+const getAuthorDetail = (id, category) => {
+  return HTTPREQUEST.get('/author', {
+    id: id, 
+    category: category,
+  });
+}
+
 const postUserInfo = (userInfo) => {
   return HTTPREQUEST.post(
     '/postInfo',
@@ -43,5 +61,8 @@ export {
   getRequest,
   getPersonalInfo,
   getSentence,
+  getRecommend,
+  getPoemDetail,
+  getAuthorDetail,
   postUserInfo,
 };

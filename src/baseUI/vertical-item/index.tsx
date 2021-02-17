@@ -14,7 +14,7 @@ function VerticalItem(props) {
   }
 
   return (
-    <View className="item-container" onClick={handleClick}>
+    <View className="vertical-container" onClick={handleClick}>
       <Text className="item title">{title}</Text>
       <Text className="item desc">{desc}</Text>
     </View>
