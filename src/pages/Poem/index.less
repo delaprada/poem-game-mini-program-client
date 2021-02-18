@@ -1,6 +1,8 @@
 @import '../../assets/global-style.less';
 
 .poem-container {
+  letter-spacing: 2rpx;
+
   .poem {
     display: flex;
     align-items: center;
@@ -50,6 +52,18 @@
         .name {
           margin-left: 1rpx;
         }
+
+        .button {
+          margin: 0;
+          padding: 0;
+          font-size: @font-size-base;
+          background-color: #fff;
+          -webkit-tap-highlight-color: #fff;
+
+          &::after {
+            border: none;
+          }
+        }
       }
     }
   }
@@ -70,6 +84,7 @@
 
       .more {
         color: @grey-dim;
+
         &::after {
           content: '>',
         }

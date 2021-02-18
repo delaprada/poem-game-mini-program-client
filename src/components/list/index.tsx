@@ -24,6 +24,7 @@ function List(props) {
     content = content.replace(/\|/g, '');
 
     const handleClick = (id, category) => {
+
       Taro.navigateTo({
         url: `/pages/Poem/index?id=${id}&category=${category}`,
       })

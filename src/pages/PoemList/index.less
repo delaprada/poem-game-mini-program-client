@@ -1,0 +1,69 @@
+@import '../../assets/global-style.less';
+
+.poemList-container {
+  position: relative;
+  margin: 0 auto;
+  width: 85%;
+
+  .top {
+    margin: 30rpx 0;
+    text-align: center;
+
+    .title {
+      font-size: @font-size-large;
+    }
+
+    .desc {
+      margin-top: 5rpx;
+      font-size: @font-size-base;
+      color: @grey-dim;
+
+      &::before {
+        content: '「';
+      }
+
+      &::after {
+        content: '」';
+      }
+    }
+  }
+
+  .item-container {
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid @grey;
+
+    .hover-style {
+      background-color: @grey-light;
+    }
+
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .profile {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+          margin-bottom: 10rpx;
+          font-size: @font-size-base;
+        }
+
+        .author {
+          color: @grey-dim;
+          font-size: @font-size-small;
+        }
+      }
+
+      .content {
+        font-size: @font-size-base;
+        color: @grey-dim;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: left;
+      }
+    }
+  }
+}

@@ -52,6 +52,19 @@ const getDynamic = (composition_id, category) => {
   });
 };
 
+const getCompositionList = (author_id, category) => {
+  return HTTPREQUEST.get('/author/list', {
+    author_id: author_id,
+    category: category,
+  });
+};
+
+const getPoemList = (category) => {
+  return HTTPREQUEST.get('/poemList', {
+    category: category,
+  });
+};
+
 const postUserInfo = (userInfo) => {
   return HTTPREQUEST.post(
     '/postInfo',
@@ -96,6 +109,8 @@ export {
   getPoemDetail,
   getAuthorDetail,
   getDynamic,
+  getCompositionList,
+  getPoemList,
   postUserInfo,
   postLike,
   postCollect,

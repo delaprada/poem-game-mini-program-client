@@ -14,3 +14,13 @@ export type AuthorType = {
   intro_s?: string,
   dynasty?: string,
 }
+
+export type CompositionType = {
+  id: number,
+  author_id: number,
+  title: string,
+  content: string,
+  author: string,
+}
+
+export type CompoList = Array<CompositionType>;

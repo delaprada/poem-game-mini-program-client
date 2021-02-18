@@ -1,0 +1,82 @@
+@import '../../assets/global-style.less';
+
+@titleStyle: {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+};
+
+@contentStyle: {
+  position: relative;
+  margin: 15rpx auto;
+  width: 90%;
+};
+
+.poet-container {
+  background-color: @gainsboro;
+  letter-spacing: 2rpx;
+
+  .intro {
+    padding: 20rpx 0;
+    background-color: #fff;
+
+    .title {
+      @titleStyle();
+    }
+
+    .content {
+      @contentStyle();
+      font-size: @font-size-base;
+      color: @black-light;
+    }
+  }
+
+  .composition-list {
+    margin-top: 30rpx;
+    padding: 20rpx 0;
+    background-color: #fff;
+
+    .title {
+      @titleStyle();
+
+      .count {
+        margin-left: 10rpx;
+        font-size: @font-size-small;
+        color: @grey-dim;
+      }
+    }
+
+    .list {
+      @contentStyle();
+
+      .item-container {
+        padding: 30rpx 0;
+        border-bottom: 1rpx solid @grey;
+
+        .hover-style {
+          background-color: @grey-light;
+        }
+
+        .item-content {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          .title {
+            font-size: @font-size-base;
+            margin-top: 10rpx;
+          }
+
+          .content {
+            font-size: @font-size-base;
+            color: @grey-dim;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

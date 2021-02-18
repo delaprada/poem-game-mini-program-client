@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Taro, { getCurrentInstance } from '@tarojs/taro';
-import { View, Text } from '@tarojs/components';
+import { View, Text, Button } from '@tarojs/components';
 import { AtIcon, AtModal } from 'taro-ui';
 import {
   getPoemDetail,
@@ -51,6 +51,13 @@ function Poem() {
           console.error(err);
         });
     }
+  }, []);
+
+  useEffect(() => {
+    // 设置页面分享
+    Taro.showShareMenu({
+      withShareTicket: true,
+    });
   }, []);
 
   // 获取诗人详细信息
@@ -142,6 +149,14 @@ function Poem() {
     });
   };
 
+  const handleMore = () => {
+    Taro.navigateTo({
+      url: `/pages/Poet/index?id=${
+        authorInfo.id
+      }&category=${category}&authorInfo=${JSON.stringify(authorInfo)}`,
+    });
+  };
+
   return (
     <View>
       {!isEmptyObject(poemInfo) && (
@@ -175,8 +190,10 @@ function Poem() {
                 <Text className="name">收藏</Text>
               </View>
               <View className="action">
-                <View className="at-icon at-icon-share"></View>
-                <Text className="name">分享</Text>
+                <Button className="button" openType="share">
+                  <View className="at-icon at-icon-share"></View>
+                  分享
+                </Button>
               </View>
               <View className="action">
                 <View className="at-icon at-icon-sound"></View>
@@ -192,7 +209,9 @@ function Poem() {
             <View className="author-detail">
               <View className="top">
                 <View className="name">作者</View>
-                <View className="more">更多</View>
+                <View className="more" onClick={handleMore}>
+                  更多
+                </View>
               </View>
               <View className="intro">{getIntro(authorInfo)}</View>
             </View>

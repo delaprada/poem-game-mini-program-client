@@ -5,11 +5,11 @@ import { View, Text } from '@tarojs/components';
 import './index.less';
 
 function VerticalItem(props) {
-  const { id, title, desc } = props.item;
+  const { category, title, desc } = props.item;
 
   const handleClick = () => {
     Taro.navigateTo({
-      url: `/pages/PoemList/index?id=${id}`,
+      url: `/pages/PoemList/index?category=${category}&title=${title}&desc=${desc}`,
     })
   }
 

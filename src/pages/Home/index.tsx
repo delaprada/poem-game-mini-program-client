@@ -114,18 +114,7 @@ function Home() {
           </View>
         </View>
         <View className="recommend-list">
-          {/* <AtList> */}
           {curList.length > 0 && <List list={curList} show={false} />}
-          {/* {curList.map((item: any) => {
-              return (
-                <AtListItem
-                  className="item"
-                  title={item.title}
-                  note={item.author}
-                />
-              );
-            })} */}
-          {/* </AtList> */}
         </View>
       </View>
       <View className="collection">
