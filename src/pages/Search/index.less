@@ -1,0 +1,96 @@
+@import '../../assets/global-style.less';
+
+@contentStyle: {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+
+    view {
+      padding: 8rpx 25rpx;
+      margin: 20rpx 30rpx 0 0;
+      font-size: @font-size-middle;
+      color: @color-brand-dark;
+      background-color: @color-brand-lighter;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 20rpx;
+      border: 2rpx solid @color-brand-light;
+    }
+  }
+};
+
+@titleStyle: {
+  .topic {
+    margin: 0 auto;
+    padding-top: 20rpx;
+    width: 90%;
+    font-size: @font-size-middle;
+    color: @grey-dim;
+  }
+};
+
+.search-box-container {
+  background-color: @gainsboro;
+
+  .history {
+    margin: 0 auto;
+    padding: 15rpx 20rpx 50rpx 20rpx;
+    background-color: #fff;
+
+    .title {
+      font-size: @font-size-large;
+
+      .trash {
+        margin-left: 30rpx;
+      }
+    }
+
+    @contentStyle();
+  }
+
+  .recommend {
+    margin: 0 auto;
+    padding: 15rpx 20rpx;
+    background-color: #fff;
+
+    .title {
+      font-size: @font-size-large;
+    }
+
+    @contentStyle();
+  }
+
+  .author-list {
+    margin-top: 30rpx;
+    padding-bottom: 30rpx;
+    background-color: #fff;
+
+    @titleStyle();
+
+    .author-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 30rpx 0;
+      width: 90%;
+      border-bottom: 1rpx solid @grey;
+      font-size: @font-size-base;
+
+      .dynasty {
+        color: @grey-dim;
+      }
+    }
+  }
+
+  .poem-list {
+    margin-top: 30rpx;
+    background-color: #fff;
+
+    @titleStyle();
+
+    .list {
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
+}

@@ -23,6 +23,12 @@ const getPersonalInfo = () => {
   return HTTPREQUEST.get('/personal');
 };
 
+const getPersonalList = (type) => {
+  return HTTPREQUEST.get('/personal/list', {
+    type: type,
+  });
+};
+
 const getSentence = () => {
   return HTTPREQUEST.get('/sentence');
 };
@@ -65,6 +71,12 @@ const getPoemList = (category) => {
   });
 };
 
+const getSearchResult = (searchText) => {
+  return HTTPREQUEST.get('/search', {
+    searchText: searchText,
+  });
+};
+
 const postUserInfo = (userInfo) => {
   return HTTPREQUEST.post(
     '/postInfo',
@@ -104,6 +116,7 @@ export {
   getToken,
   getRequest,
   getPersonalInfo,
+  getPersonalList,
   getSentence,
   getRecommend,
   getPoemDetail,
@@ -111,6 +124,7 @@ export {
   getDynamic,
   getCompositionList,
   getPoemList,
+  getSearchResult,
   postUserInfo,
   postLike,
   postCollect,

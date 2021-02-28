@@ -21,6 +21,13 @@ export type CompositionType = {
   title: string,
   content: string,
   author: string,
+  category?: number,
 }
 
 export type CompoList = Array<CompositionType>;
+
+export type RecordListType = Array<string>;
+
+export type AuthorListType = Array<AuthorType>;
+
+export type PoemListType = Array<PoemType>;

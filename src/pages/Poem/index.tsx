@@ -15,7 +15,7 @@ import { PoemType, AuthorType } from '@constants/commonType';
 import './index.less';
 
 function Poem() {
-  const [category, setCategory] = useState<number>(0);
+  const [category, setCategory] = useState<string>('0');
   const [poemInfo, setPoemInfo] = useState<PoemType | object>({});
   const [authorInfo, setAuthorInfo] = useState<AuthorType | object>({});
   const [like, setLike] = useState<boolean>(false);
@@ -28,20 +28,17 @@ function Poem() {
     if (router) {
       const { id, category } = router.params;
 
-      const poem_id = Number(id);
-      const poem_category = Number(category);
-
-      if (poem_category) {
-        setCategory(poem_category);
+      if (category) {
+        setCategory(category);
       }
 
-      getPoemDetail(poem_id, poem_category)
+      getPoemDetail(id, category)
         .then((res) => {
           const curPoem = res[0];
 
-          if (poem_category === 0) {
+          if (category === '0') {
             curPoem.dynasty = 'S';
-          } else if (poem_category === 1) {
+          } else if (category === '1') {
             curPoem.dynasty = 'T';
           }
 
@@ -60,11 +57,11 @@ function Poem() {
     });
   }, []);
 
-  // 获取诗人详细信息
+  // 获取诗人详细信息（取部分）
   useEffect(() => {
     const id = poemInfo.author_id;
 
-    if (id !== undefined && (category === 0 || category === 1)) {
+    if (id !== undefined && (category === '0' || category === '1')) {
       getAuthorDetail(id, category)
         .then((res) => {
           setAuthorInfo(res[0]);
@@ -153,7 +150,7 @@ function Poem() {
     Taro.navigateTo({
       url: `/pages/Poet/index?id=${
         authorInfo.id
-      }&category=${category}&authorInfo=${JSON.stringify(authorInfo)}`,
+      }&category=${category}`,
     });
   };
 
@@ -179,7 +176,7 @@ function Poem() {
                 ) : (
                   <View className="at-icon at-icon-heart"></View>
                 )}
-                <Text className="name">喜爱</Text>
+                <Text className="name">喜欢</Text>
               </View>
               <View className="action" onClick={handleCollect}>
                 {collect ? (

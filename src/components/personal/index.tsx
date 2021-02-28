@@ -10,6 +10,24 @@ function Personal(props) {
   const { userName, avatarUrl, personalInfo } = props;
   const { like, collect, record, dynamic } = personalInfo;
 
+  const enterLikeList = () => {
+    Taro.navigateTo({
+      url: '/pages/UserDynamicList/index?type=0',
+    });
+  };
+
+  const enterCollectList = () => {
+    Taro.navigateTo({
+      url: '/pages/UserDynamicList/index?type=1',
+    });
+  };
+
+  const enterCompoList = () => {
+    Taro.navigateTo({
+      url: '/pages/UserDynamicList/index?type=2',
+    });
+  };
+
   return (
     <View className="personal-container">
       <View className="top">
@@ -22,15 +40,15 @@ function Personal(props) {
           <Text className="username">{userName}</Text>
         </View>
         <View className="info">
-          <View className="like">
+          <View className="like" onClick={enterLikeList}>
             <Text className="count">{like}</Text>
             <Text>喜欢</Text>
           </View>
-          <View className="collect">
+          <View className="collect" onClick={enterCollectList}>
             <Text className="count">{collect}</Text>
             <Text>收藏</Text>
           </View>
-          <View className="composition">
+          <View className="composition" onClick={enterCompoList}>
             <Text className="count">{record}</Text>
             <Text>作品</Text>
           </View>
@@ -43,7 +61,9 @@ function Personal(props) {
             动态
           </View>
           <View>
-            {dynamic && dynamic.length > 0 && <List list={dynamic} show={true} />}
+            {dynamic && dynamic.length > 0 && (
+              <List list={dynamic} show={true} />
+            )}
           </View>
         </View>
       </View>

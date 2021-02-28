@@ -38,7 +38,7 @@ function Login(props) {
   return (
     <View className="login-container">
       <View className="image">
-        <Image src={loginPic} style="width: 100%"></Image>
+        <Image src='https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/loginBg.jpg' style="width: 100%"></Image>
       </View>
       <View className="content">
         <View className="title-container">

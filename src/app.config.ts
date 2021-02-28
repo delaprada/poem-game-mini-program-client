@@ -2,13 +2,44 @@ export default {
   pages: [
     'pages/Home/index', // 首页
     'pages/User/index', // 个人中心页
-    'pages/Search/index', // 搜索页
-    'pages/PoemList/index', // 诗词列表
-    'pages/Poem/index', // 诗词详情
-    'pages/Poet/index', // 诗人详情
-    'pages/Player/index', // 诗词试听
-    'pages/Record/index', // 诗词朗诵录制
+    // 'pages/UserDynamicList/index', // 用户动态列表页（喜欢列表、收藏列表、作品列表）
+    // 'pages/Search/index', // 搜索页
+    // 'pages/PoemList/index', // 诗词列表
+    // 'pages/Poem/index', // 诗词详情
+    // 'pages/Poet/index', // 诗人详情
+    // 'pages/Player/index', // 诗词试听
+    // 'pages/Record/index', // 诗词朗诵录制
     'pages/GameCenter/index', // 诗词游戏
+  ],
+  subpackages: [
+    {
+      root: 'pages/UserDynamicList/',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/Search/',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/PoemList/',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/Poem',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/Poet',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/Player',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/Record',
+      pages: ['index'],
+    },
   ],
   tabBar: {
     list: [

@@ -8,7 +8,7 @@
 
 @contentStyle: {
   position: relative;
-  margin: 15rpx auto;
+  margin: 20rpx auto;
   width: 90%;
 };
 
@@ -36,7 +36,7 @@
     padding: 20rpx 0;
     background-color: #fff;
 
-    .title {
+    & >.title {
       @titleStyle();
 
       .count {
@@ -63,8 +63,8 @@
           width: 100%;
 
           .title {
+            margin-bottom: 10rpx;
             font-size: @font-size-base;
-            margin-top: 10rpx;
           }
 
           .content {

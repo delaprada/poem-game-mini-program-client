@@ -3,9 +3,10 @@ import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import { login, formatDateToMb } from '@utils';
 import { getSentence } from '@servers/servers';
-import { AtIcon, AtList, AtListItem } from 'taro-ui';
+import { AtIcon } from 'taro-ui';
 import VerticalItem from '@baseUI/vertical-item';
 import List from '@components/list';
+import { deduplicate } from '@utils/index';
 import { collectionList, supList } from '@utils/config';
 import { getRecommend } from '@servers/servers';
 
@@ -48,8 +49,7 @@ function Home() {
     // 获取热门推荐
     getRecommend()
       .then((res) => {
-        const len = res.length;
-        const list = res.concat(supList.slice(0, 15 - len));
+        const list = deduplicate(res.concat(supList));
         setRecommendList(list);
         setCurList(list.slice(index - 3, index));
       })

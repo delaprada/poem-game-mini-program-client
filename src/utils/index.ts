@@ -54,12 +54,12 @@ function check() {
 const checkLogin = () => {
   const userInfo = Taro.getStorageSync('userInfo');
 
-  if(!userInfo) {
+  if (!userInfo) {
     return false;
   }
 
   return true;
-}
+};
 
 const add0 = (m) => {
   return m < 10 ? '0' + m : m;
@@ -187,12 +187,45 @@ const getDynasty = (dynasty) => {
   }
 };
 
+const getAuthorCategory = (dynasty) => {
+  if (dynasty === 'S') {
+    return 0;
+  } else if (dynasty === 'T') {
+    return 1;
+  }
+};
+
 const getIntro = (authorInfo) => {
   if (authorInfo.intro) {
     return authorInfo.intro;
   } else {
     return authorInfo.intro_s;
   }
+};
+
+const getDynamicType = (type) => {
+  if (type === '0') {
+    return '喜欢';
+  } else if (type === '1') {
+    return '收藏';
+  } else if (type === '2') {
+    return '作品';
+  }
+};
+
+const deduplicate = (arr: any[]) => {
+  const res: any[] = [];
+  const obj = {};
+
+  for (let i = 0; i < arr.length; ++i) {
+    const attr = `${arr[i].id}&${arr[i].category}`;
+    if (!obj[attr]) {
+      res.push(arr[i]);
+      obj[attr] = true;
+    }
+  }
+
+  return res.slice(0, 15);
 };
 
 export {
@@ -204,4 +237,7 @@ export {
   isEmptyObject,
   getDynasty,
   getIntro,
+  getDynamicType,
+  getAuthorCategory,
+  deduplicate,
 };

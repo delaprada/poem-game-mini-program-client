@@ -2,31 +2,39 @@ import React, { useEffect, useState } from 'react';
 import Taro, { getCurrentInstance } from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import VirtualList from '@tarojs/components/virtual-list';
-import { getCompositionList } from '@servers/servers';
+import { getAuthorDetail, getCompositionList } from '@servers/servers';
 import { getIntro } from '@utils/index';
 import { AuthorType, CompoList } from '@constants/commonType';
 
 import './index.less';
 
 function Poet() {
-  const [category, setCategory] = useState<number>(0);
+  const [category, setCategory] = useState<string>('0');
   const [authorInfo, setAuthorInfo] = useState<AuthorType>({});
   const [compoList, setCompoList] = useState<CompoList>([]);
 
   useEffect(() => {
     const router = getCurrentInstance().router;
+
     if (router) {
-      const { id, category, authorInfo } = router.params;
+      const { id, category } = router.params;
 
-      setCategory(Number(category));
-
-      if (authorInfo) {
-        const info = JSON.parse(authorInfo);
-        setAuthorInfo(info);
-        Taro.setNavigationBarTitle({
-          title: info.name,
-        });
+      if(category) {
+        setCategory(category);
       }
+
+      // 获取诗人详细信息
+      if (id !== undefined && (category === '0' || category === '1')) {
+        getAuthorDetail(id, category)
+          .then((res) => {
+            setAuthorInfo(res[0]);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+
+      // 获取诗人作品列表
       getCompositionList(id, category)
         .then((res) => {
           setCompoList(res);
@@ -39,7 +47,7 @@ function Poet() {
 
   const listItem = React.memo(({ id, index, style, data }) => {
     const item = data[index];
-    let { title, content, author } = item;
+    let { title, content } = item;
     content = content.replace(/\|/g, '');
 
     const handleClick = (id) => {
