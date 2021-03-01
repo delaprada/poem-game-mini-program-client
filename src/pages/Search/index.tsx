@@ -4,7 +4,7 @@ import { View, Text } from '@tarojs/components';
 import { AtIcon, AtSearchBar } from 'taro-ui';
 import List from '@components/list';
 import { getSearchResult } from '@servers/servers';
-import { getDynasty, getAuthorCategory } from '@utils/index';
+import { getDynasty, getAuthorCategory, changeColor } from '@utils/index';
 import {
   RecordListType,
   AuthorListType,
@@ -13,14 +13,14 @@ import {
 
 import './index.less';
 
-function SearchBox(props) {
+function SearchBox() {
   const [searchText, setSearchText] = useState<string>('');
   const [focus, setFocus] = useState<boolean>(false);
+  const [authorList, setAuthorList] = useState<AuthorListType>([]);
+  const [poemList, setPoemList] = useState<PoemListType>([]);
   const [recordList, setRecordList] = useState<RecordListType>(
     Taro.getStorageSync('search_cache')
   );
-  const [authorList, setAuthorList] = useState<AuthorListType>([]);
-  const [poemList, setPoemList] = useState<PoemListType>([]);
 
   const hotList = ['李白', '杜甫'];
 
@@ -36,22 +36,23 @@ function SearchBox(props) {
       });
   };
 
+  // 聚焦
   const handleFocus = () => {
     setFocus(true);
     setRecordList(Taro.getStorageSync('search_cache'));
-  }
+  };
 
+  // 失焦
   const handleBlur = () => {
     setFocus(false);
-  }
+  };
 
+  // 搜索框内容改变
   const handleChange = (e) => {
     setSearchText(e);
   };
 
   const search = (text) => {
-    console.log('searchText is ' + text);
-
     if (text === '') {
       Taro.showToast({
         title: '请输入关键字',
@@ -99,6 +100,7 @@ function SearchBox(props) {
   };
 
   const keywordsClick = (item) => {
+    setSearchText(item);
     search(item);
   };
 
@@ -127,7 +129,10 @@ function SearchBox(props) {
             {authorList.map((item) => {
               return (
                 <View className="author-item" onClick={() => enterDetail(item)}>
-                  <Text className="name">{item.name}</Text>
+                  <View
+                    dangerouslySetInnerHTML={{
+                      __html: changeColor(item.name, searchText),
+                    }}></View>
                   <Text className="dynasty">{getDynasty(item.dynasty)}</Text>
                 </View>
               );
@@ -145,7 +150,12 @@ function SearchBox(props) {
           <View className="poem-list">
             <View className="topic">诗词</View>
             <View className="list">
-              <List list={poemList} show={false} />
+              <List
+                list={poemList}
+                show={false}
+                highlight={true}
+                searchText={searchText}
+              />
             </View>
           </View>
         ) : null}
@@ -165,9 +175,8 @@ function SearchBox(props) {
           onActionClick={handleClick}
         />
       </View>
-      {recordList.length > 0 &&((
-      authorList.length === 0 &&
-      poemList.length === 0) || focus) ? (
+      {recordList.length > 0 &&
+      ((authorList.length === 0 && poemList.length === 0) || focus) ? (
         <View className="history">
           <View className="title">
             <Text>搜索历史</Text>

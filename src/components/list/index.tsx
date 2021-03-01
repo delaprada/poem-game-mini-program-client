@@ -1,12 +1,12 @@
 import React from 'react';
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
-import { getTitle } from '@utils';
+import { getTitle, changeColor } from '@utils/index';
 
 import './index.less';
 
 function List(props) {
-  const { list, show } = props;
+  const { list, show, highlight, searchText } = props;
 
   const getDynamicDesc = (item) => {
     const { resStr, exec_time } = getTitle(item);
@@ -19,15 +19,25 @@ function List(props) {
     );
   };
 
-  const listItem = (item, show) => {
+  const listItem = (item) => {
     let { id, category, title, content, author } = item.detail || item;
+
     content = content.replace(/\|/g, '');
 
     const handleClick = (id, category) => {
-
       Taro.navigateTo({
         url: `/pages/Poem/index?id=${id}&category=${category}`,
-      })
+      });
+    };
+
+    // 对搜索关键字进行高亮操作
+    const changeFormat = (text, searchText) => {
+      return (
+        <View
+          dangerouslySetInnerHTML={{
+            __html: changeColor(text, searchText),
+          }}></View>
+      );
     };
 
     return (
@@ -38,10 +48,16 @@ function List(props) {
           hoverClass="hover-style"
           onClick={() => handleClick(id, category)}>
           <View className="profile">
-            <Text className="title">{title}</Text>
-            <Text className="author">{author}</Text>
+            <View className="title">
+              {highlight ? changeFormat(title, searchText) : title}
+            </View>
+            <View className="author">
+              {highlight ? changeFormat(author, searchText) : author}
+            </View>
           </View>
-          <View className="content">{content}</View>
+          <View className="content">
+            {highlight ? changeFormat(content, searchText) : content}
+          </View>
         </View>
       </View>
     );
@@ -50,7 +66,7 @@ function List(props) {
   return (
     <View className="list-container">
       {list.map((item) => {
-        return <View>{listItem(item, show)}</View>;
+        return <View>{listItem(item)}</View>;
       })}
     </View>
   );

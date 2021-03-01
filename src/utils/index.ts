@@ -228,6 +228,13 @@ const deduplicate = (arr: any[]) => {
   return res.slice(0, 15);
 };
 
+const changeColor = (text, searchText) => {
+  const replaceStr = '<span>' + searchText + '</span>';
+  const resText = text.replace(searchText, replaceStr);
+
+  return resText;
+};
+
 export {
   login,
   check,
@@ -240,4 +247,5 @@ export {
   getDynamicType,
   getAuthorCategory,
   deduplicate,
+  changeColor,
 };
