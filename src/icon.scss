@@ -3,7 +3,9 @@
   font-family: 'FontAwesome';
   /* 自行安装第三方字体图标库 */
   src: url('./assets/fonts/fontawesome-webfont.eot?v=4.7.0');
-  src: url('./assets/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('./assets/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('./assets/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
+  src: url('./assets/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+    url('./assets/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+    url('./assets/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -19,11 +21,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .fa-microphone:before {
-  content: "\f130";
+  content: '\f130';
 }
 .fa-listen:before {
-  content: "\f001";
+  content: '\f001';
 }
 .fa-trash-o:before {
-  content: "\f014";
+  content: '\f014';
 }
+// .fa-play-circle-o:before {
+//   content: '\f01d';
+// }
+// .fa-pause-circle-o:before {
+//   content: '\f28c';
+// }

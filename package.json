@@ -44,11 +44,12 @@
     "immutable": "^4.0.0-rc.12",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
-    "react-redux": "^7.2.0",
-    "redux": "^4.0.0",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "taro-ui": "^3.0.0-alpha.3"
+    "taro-ui": "^3.0.0-alpha.3",
+    "redux-immutable": "^4.0.0"
   },
   "devDependencies": {
     "@types/webpack-env": "^1.13.6",

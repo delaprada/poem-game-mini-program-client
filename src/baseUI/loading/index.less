@@ -1,0 +1,32 @@
+@import '../../assets/global-style.less';
+
+@keyframes loading {
+  0%, 100% {
+    transform: scale(0.0);
+  }
+  50% {
+    transform: scale(1.0);
+  }
+}
+
+.loading-container {
+  view {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 60rpx;
+    height: 60rpx;
+    opacity: 0.6;
+    border-radius: 50%;
+    background-color: @color-brand;
+    animation: 1.4s infinite ease-in loading;
+  }
+
+  view:nth-child(2) {
+    animation-delay: -0.7s;
+  }
+}

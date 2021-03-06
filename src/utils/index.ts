@@ -85,6 +85,12 @@ const format = (shijianchuo) => {
   );
 };
 
+function formatPlayerTime(mss) {
+  const minutes = Math.floor(mss / (1000 * 60));
+  const seconds = Math.floor(((mss % (1000 * 60)) / 1000)).toString().padStart(2, '0');
+  return `${minutes}:${seconds}`;
+}
+
 const getTitle = (item) => {
   let { dynamic_type, category, record_id, exec_time } = item;
 
@@ -205,11 +211,13 @@ const getIntro = (authorInfo) => {
 
 const getDynamicType = (type) => {
   if (type === '0') {
-    return '喜欢';
+    return '我的喜欢';
   } else if (type === '1') {
-    return '收藏';
+    return '我的收藏';
   } else if (type === '2') {
-    return '作品';
+    return '我的作品';
+  } else if (type === '3') {
+    return '';
   }
 };
 
@@ -241,6 +249,7 @@ export {
   checkLogin,
   getTitle,
   formatDateToMb,
+  formatPlayerTime,
   isEmptyObject,
   getDynasty,
   getIntro,

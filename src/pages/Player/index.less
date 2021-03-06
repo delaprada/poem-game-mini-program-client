@@ -1,0 +1,143 @@
+@import '../../assets/global-style.less';
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.player-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(20px);
+    &.layer {
+      background: @desc-color;
+      opacity: 0.3;
+      filter: none;
+    }
+  }
+
+  .middle {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 40rpx;
+    bottom: 250rpx;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: hidden;
+
+    .cd-wrapper {
+      position: absolute;
+      top: 20%;
+      width: 80%;
+      height: 80vw; // 高度为80%的视口宽度即和宽度同样大小
+      box-sizing: border-box;
+
+      .needle {
+        position: absolute;
+        top: -20vw;
+        left: 37vw;
+        width: 25vw;
+        height: 40vw;
+        z-index: 100;
+        background-image: url('https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/needle.png');
+        background-position: 50% center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform-origin: 4.5vw 4.5vw;
+        transition: all 0.3s ease 0s;
+
+        &.pause {
+          transform: rotate(-30deg);
+        }
+      }
+
+      .cd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/disc.png');
+        border: 4px solid rgba(228, 228, 228, 0.1);
+        border-radius: 50%;
+        background-position: 50% center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        .image {
+          width: 68%;
+          height: 68%;
+          border-radius: 50%;
+        }
+        .play {
+          animation: 20s linear infinite rotate;
+          &.pause {
+            animation-play-state: paused;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 130rpx;
+    width: 100%;
+
+    .progress {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+      padding: 30rpx 0 20rpx 0;
+
+      .time {
+        flex: 0 0 30px;
+        width: 30px;
+        font-size: @font-size-small;
+        line-height: 30px;
+        color: @desc-color;
+        &.time-l {
+          text-align: left;
+        }
+        &.time-r {
+          text-align: right;
+        }
+      }
+
+      .progress-wrapper {
+        flex: 1;
+      }
+    }
+
+    .operators {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      width: 100rpx;
+      height: 100rpx;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50rpx 50px, #89a2f5, #597ef7);
+    }
+  }
+}

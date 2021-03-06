@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import Taro from '@tarojs/taro';
 import { getCurrentInstance } from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
@@ -9,7 +10,7 @@ import { CompoList } from '@constants/commonType';
 
 import './index.less';
 
-function UserDynamicList() {
+function UserDynamicList(props) {
   const [type, setType] = useState<string>('');
   const [list, setList] = useState<CompoList>([]);
 
@@ -20,7 +21,7 @@ function UserDynamicList() {
       setType(type);
 
       Taro.setNavigationBarTitle({
-        title: `我的${getDynamicType(type)}`,
+        title: `${getDynamicType(type)}`,
       });
     }
   }, []);
@@ -28,13 +29,20 @@ function UserDynamicList() {
   // 获取用户喜欢/收藏/作品列表
   useEffect(() => {
     if (type) {
-      getPersonalList(type)
-        .then((res) => {
-          setList(res);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+      if (type === '3') {
+        const { searchRes: immutableSearchRes } = props;
+        const searchRes = immutableSearchRes.toJS();
+        
+        setList(searchRes.poem);
+      } else {
+        getPersonalList(type)
+          .then((res) => {
+            setList(res);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
     }
   }, [type]);
 
@@ -51,4 +59,8 @@ function UserDynamicList() {
   );
 }
 
-export default UserDynamicList;
+const mapStateToProps = (state) => ({
+  searchRes: state.getIn(['search', 'searchRes']),
+});
+
+export default connect(mapStateToProps, null)(React.memo(UserDynamicList));

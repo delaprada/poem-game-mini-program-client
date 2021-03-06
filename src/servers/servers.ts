@@ -77,6 +77,13 @@ const getSearchResult = (searchText) => {
   });
 };
 
+const getAudio = (poem_id, category) => {
+  return HTTPREQUEST.get('/audio', {
+    poem_id: poem_id,
+    category: category,
+  });
+};
+
 const postUserInfo = (userInfo) => {
   return HTTPREQUEST.post(
     '/postInfo',
@@ -125,6 +132,7 @@ export {
   getCompositionList,
   getPoemList,
   getSearchResult,
+  getAudio,
   postUserInfo,
   postLike,
   postCollect,

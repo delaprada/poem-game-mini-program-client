@@ -25,7 +25,7 @@ function PoemList() {
 
       if (title) {
         setTitle(title);
-        
+
         Taro.setNavigationBarTitle({
           title: title,
         });
@@ -47,7 +47,7 @@ function PoemList() {
 
   const listItem = React.memo(({ id, index, style, data }) => {
     const item = data[index];
-    let { title, content, author } = item;
+    let { title, content, author, chapter } = item;
     content = content.replace(/\|/g, '');
 
     const handleClick = (id) => {
@@ -63,7 +63,7 @@ function PoemList() {
           hoverClass="hover-style"
           onClick={() => handleClick(item.id)}>
           <View className="profile">
-            <Text className="title">{title}</Text>
+            <Text className="title">{title ? title : chapter}</Text>
             <Text className="author">{author}</Text>
           </View>
           <View className="content">{content}</View>

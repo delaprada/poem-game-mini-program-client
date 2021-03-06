@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '诗词朗诵录制',
+  navigationBarTitleText: '朗诵',
 };

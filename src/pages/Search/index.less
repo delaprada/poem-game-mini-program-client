@@ -96,5 +96,27 @@
       margin: 0 auto;
       width: 90%;
     }
+
+    .more{
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 30rpx 0;
+      width: 90%;
+      border-bottom: 1rpx solid @grey;
+      font-size: @font-size-base;
+
+      .text {
+        color: @color-brand;
+      }
+
+      .arrow {
+        color: @grey-dim;
+
+        &::after {
+          content: '>'
+        }
+      }
+    }
   }
 }

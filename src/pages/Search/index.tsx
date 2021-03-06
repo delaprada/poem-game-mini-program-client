@@ -1,40 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import Taro from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import { AtIcon, AtSearchBar } from 'taro-ui';
 import List from '@components/list';
-import { getSearchResult } from '@servers/servers';
+import Loading from '@baseUI/loading';
+import * as actionTypes from './store/actionCreators';
 import { getDynasty, getAuthorCategory, changeColor } from '@utils/index';
-import {
-  RecordListType,
-  AuthorListType,
-  PoemListType,
-} from '@constants/commonType.ts';
+import { RecordListType } from '@constants/commonType.ts';
 
 import './index.less';
 
-function SearchBox() {
+function Search(props) {
   const [searchText, setSearchText] = useState<string>('');
   const [focus, setFocus] = useState<boolean>(false);
-  const [authorList, setAuthorList] = useState<AuthorListType>([]);
-  const [poemList, setPoemList] = useState<PoemListType>([]);
   const [recordList, setRecordList] = useState<RecordListType>(
     Taro.getStorageSync('search_cache')
   );
 
+  const { searchRes: immutableSearchRes, loading } = props;
+  const searchRes = immutableSearchRes && immutableSearchRes.toJS();
+  const authorList = searchRes && searchRes.author;
+  const poemList = searchRes && searchRes.poem;
+
+  const { getSearchResDispatch, changeLoadingDispatch } = props;
+
   const hotList = ['李白', '杜甫'];
 
-  // 请求操作
-  const getSearchRes = (text) => {
-    getSearchResult(text)
-      .then((res) => {
-        setAuthorList(res.author);
-        setPoemList(res.poem);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
+  // 解决点击清空按钮再点击关键字导致两次输入的关键字拼接问题
+  useEffect(() => {
+    if (!searchText) {
+      changeLoadingDispatch(true);
+      getSearchResDispatch('');
+    }
+  }, [searchText]);
 
   // 聚焦
   const handleFocus = () => {
@@ -52,6 +51,7 @@ function SearchBox() {
     setSearchText(e);
   };
 
+  // 搜索
   const search = (text) => {
     if (text === '') {
       Taro.showToast({
@@ -64,6 +64,7 @@ function SearchBox() {
 
       if (list === '') {
         const tmpList: Array<string> = [];
+
         tmpList.push(text);
         Taro.setStorageSync('search_cache', tmpList);
       } else {
@@ -91,19 +92,24 @@ function SearchBox() {
         Taro.setStorageSync('search_cache', list);
       }
 
-      getSearchRes(text);
+      // 请求操作
+      changeLoadingDispatch(true);
+      getSearchResDispatch(text);
     }
   };
 
+  // 点击搜索按钮
   const handleClick = () => {
     search(searchText);
   };
 
+  // 点击关键字
   const keywordsClick = (item) => {
     setSearchText(item);
     search(item);
   };
 
+  // 点击删除历史
   const delHistory = () => {
     setRecordList([]);
     Taro.setStorage({
@@ -112,6 +118,7 @@ function SearchBox() {
     });
   };
 
+  // 点击诗人进入诗人详情页
   const enterDetail = (item) => {
     const category = getAuthorCategory(item.dynasty);
 
@@ -120,10 +127,16 @@ function SearchBox() {
     });
   };
 
+  const handleMore = () => {
+    Taro.navigateTo({
+      url: '/pages/UserDynamicList/index?type=3',
+    });
+  };
+
   const renderAuthorList = () => {
     return (
       <View>
-        {authorList.length > 0 && !focus ? (
+        {authorList && authorList.length > 0 && !focus ? (
           <View className="author-list">
             <View className="topic">诗人</View>
             {authorList.map((item) => {
@@ -146,16 +159,20 @@ function SearchBox() {
   const renderPoemList = () => {
     return (
       <View>
-        {poemList.length > 0 && !focus ? (
+        {poemList && poemList.length > 0 && !focus ? (
           <View className="poem-list">
             <View className="topic">诗词</View>
             <View className="list">
               <List
-                list={poemList}
+                list={poemList.slice(0, 5)}
                 show={false}
                 highlight={true}
                 searchText={searchText}
               />
+            </View>
+            <View className="more" onClick={handleMore}>
+              <Text className="text">查看更多结果</Text>
+              <Text className="arrow">{poemList.length - 5}</Text>
             </View>
           </View>
         ) : null}
@@ -175,8 +192,7 @@ function SearchBox() {
           onActionClick={handleClick}
         />
       </View>
-      {recordList.length > 0 &&
-      ((authorList.length === 0 && poemList.length === 0) || focus) ? (
+      {recordList.length > 0 && ((!authorList && !poemList) || focus) ? (
         <View className="history">
           <View className="title">
             <Text>搜索历史</Text>
@@ -198,7 +214,7 @@ function SearchBox() {
           </View>
         </View>
       ) : null}
-      {(authorList.length === 0 && poemList.length === 0) || focus ? (
+      {(!authorList && !poemList) || focus ? (
         <View className="recommend">
           <View className="title">热门推荐</View>
           <View className="content">
@@ -214,8 +230,25 @@ function SearchBox() {
       ) : null}
       {renderAuthorList()}
       {renderPoemList()}
+      {loading ? <Loading /> : null}
     </View>
   );
 }
 
-export default SearchBox;
+const mapStateToProps = (state) => ({
+  searchRes: state.getIn(['search', 'searchRes']),
+  loading: state.getIn(['search', 'loading']),
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getSearchResDispatch(searchText) {
+      dispatch(actionTypes.getSearchRes(searchText));
+    },
+    changeLoadingDispatch(curState) {
+      dispatch(actionTypes.changeLoading(curState));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Search));
