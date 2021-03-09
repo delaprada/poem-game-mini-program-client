@@ -61,6 +61,38 @@ const checkLogin = () => {
   return true;
 };
 
+const fileUpload = (filePath, id, category, record_name, dt) => {
+  let url = '';
+
+  Taro.uploadFile({
+    // url: 'https://www.miniprogram.ltd/record',
+    url: 'http://127.0.0.1:7001/record',
+    filePath: filePath,
+    name: 'file',
+    header: {
+      'content-type': 'multipart/form-data',
+      Authorization: Taro.getStorageSync('token'),
+    },
+    formData: {
+      record_name: record_name,
+      poem_id: id,
+      category: category,
+      dt: dt,
+    },
+    success: (res) => {
+      console.log(res);
+      url = res.data;
+      // playAudio(url);
+    },
+    fail: (error) => {
+      console.log('failed!');
+      console.error(error);
+    },
+  });
+
+  return url;
+};
+
 const add0 = (m) => {
   return m < 10 ? '0' + m : m;
 };
@@ -87,7 +119,9 @@ const format = (shijianchuo) => {
 
 function formatPlayerTime(mss) {
   const minutes = Math.floor(mss / (1000 * 60));
-  const seconds = Math.floor(((mss % (1000 * 60)) / 1000)).toString().padStart(2, '0');
+  const seconds = Math.floor((mss % (1000 * 60)) / 1000)
+    .toString()
+    .padStart(2, '0');
   return `${minutes}:${seconds}`;
 }
 
@@ -247,6 +281,7 @@ export {
   login,
   check,
   checkLogin,
+  fileUpload,
   getTitle,
   formatDateToMb,
   formatPlayerTime,

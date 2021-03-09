@@ -1,0 +1,35 @@
+@import '../../assets/global-style.less';
+
+.record-list-container {
+  position: relative;
+  margin: 0 auto;
+  width: 85%;
+  letter-spacing: 2rpx;
+
+  .top {
+    margin-top: 30rpx;
+    .count {
+      margin-left: 5rpx;
+      font-size: @font-size-base;
+      color: @grey-dim;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    height: 100rpx;
+    border-bottom: 2px solid @gray-lighter;
+    font-size: @font-size-base;
+
+    .record-name {
+      width: 100%;
+      color: @grey-dim;
+    }
+
+    &::after {
+      content: '>';
+      color: @grey-dim;
+    }
+  }
+}

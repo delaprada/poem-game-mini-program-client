@@ -24,7 +24,7 @@ function Personal(props) {
 
   const enterCompoList = () => {
     Taro.navigateTo({
-      url: '/pages/UserDynamicList/index?type=2',
+      url: '/pages/RecordList/index',
     });
   };
 

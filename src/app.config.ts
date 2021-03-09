@@ -40,6 +40,14 @@ export default {
       root: 'pages/Record',
       pages: ['index'],
     },
+    {
+      root: 'pages/RecordList',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/Audition',
+      pages: ['index'],
+    },
   ],
   tabBar: {
     list: [

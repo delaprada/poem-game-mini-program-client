@@ -26,6 +26,16 @@ export type CompositionType = {
   category?: number;
 };
 
+export type RecordingType = {
+  record_id: number,
+  record_name: string,
+  record_url: string,
+  poem_id: number,
+  category: number,
+}
+
 export type CompoList = Array<CompositionType>;
 
 export type RecordListType = Array<string>;
+
+export type RecordingListType = Array<RecordingType>;

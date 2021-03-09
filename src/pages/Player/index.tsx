@@ -4,7 +4,6 @@ import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
 import { AtIcon } from 'taro-ui';
 import ProgressBar from '@baseUI/progress-bar';
-import { changePlayStatus } from './store/actionCreators';
 import { formatPlayerTime } from '@utils/index';
 
 const backgroundAudioManager = Taro.getBackgroundAudioManager();
@@ -76,7 +75,10 @@ function Player(props) {
   };
 
   const updateProgress = (currentPosition) => {
-    const { audio_dt } = audioInfo;
+    let { audio_dt } = audioInfo;
+    if (!audio_dt) {
+      audio_dt = backgroundAudioManager.duration;
+    }
     const percent = Math.floor((currentPosition * 1000 * 100) / audio_dt);
     setPlayPercent(percent);
     setCurTime((percent * audio_dt) / 100);
@@ -84,7 +86,12 @@ function Player(props) {
 
   const percentChange = (e) => {
     const { value } = e.detail;
-    const { audio_dt } = audioInfo;
+    let { audio_dt } = audioInfo;
+
+    if (!audio_dt) {
+      audio_dt = backgroundAudioManager.duration;
+    }
+
     let currentPosition = Math.floor(((audio_dt / 1000) * value) / 100);
     backgroundAudioManager.seek(currentPosition);
     backgroundAudioManager.play();
@@ -125,7 +132,11 @@ function Player(props) {
               onChanging={percentChanging}
             />
           </View>
-          <Text className="time time-r">{formatPlayerTime(audioInfo.audio_dt)}</Text>
+          <Text className="time time-r">
+            {audioInfo.audio_dt
+              ? formatPlayerTime(audioInfo.audio_dt)
+              : formatPlayerTime(backgroundAudioManager.duration)}
+          </Text>
         </View>
         <View className="operators">
           {isPlaying ? (
