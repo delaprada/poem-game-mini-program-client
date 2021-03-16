@@ -65,8 +65,8 @@ const fileUpload = (filePath, id, category, record_name, dt) => {
   let url = '';
 
   Taro.uploadFile({
-    // url: 'https://www.miniprogram.ltd/record',
-    url: 'http://127.0.0.1:7001/record',
+    url: 'https://www.miniprogram.ltd/record',
+    // url: 'http://127.0.0.1:7001/record',
     filePath: filePath,
     name: 'file',
     header: {

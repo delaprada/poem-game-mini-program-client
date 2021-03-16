@@ -1,0 +1,88 @@
+@import '../../assets/global-style.less';
+
+.choice-game-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/gamebg.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: 'FZquanfuti';
+  font-size: @font-size-larger;
+
+  .choice-game {
+    position: fixed;
+    top: 80rpx;
+    bottom: 80rpx;
+    left: 20rpx;
+    right: 20rpx;
+    letter-spacing: 2px;
+
+    .title {
+      padding: 0 10rpx;
+      background-color: @color-brand;
+      color: #fff;
+    }
+
+    .question {
+      margin-left: 20rpx;
+    }
+
+    .options {
+      margin-top: 50rpx;
+
+      .option {
+        display: flex;
+        margin-bottom: 20rpx;
+
+        .tag {
+          width: 40rpx;
+          margin-right: 10rpx;
+        }
+
+        .wrong {
+          color: #f00;
+        }
+
+        .correct {
+          color: @color-brand;
+        }
+      }
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 300rpx;
+      width: 100%;
+      .buttons {
+        display: flex;
+        justify-content: center;
+
+        .button {
+          width: 40%;
+        }
+      }
+    }
+
+    .at-modal__container {
+      width: 400rpx;
+
+      .at-modal__header {
+        font-size: @font-size-large;
+      }
+
+      .at-modal__content {
+        min-height: 0;
+        font-size: @font-size-large;
+
+        .content-simple {
+
+        }
+      }
+
+      .at-modal__footer {
+        font-size: @font-size-large;
+      }
+    }
+  }
+}

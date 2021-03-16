@@ -88,9 +88,9 @@ function Home() {
               <View className="title">每日一诗</View>
               <View className="day">{date[2]}</View>
             </View>
-            <View>
-              <Text className="v-time year">{date[0]}</Text>
-              <Text className="v-time month">{date[1]}</Text>
+            <View className="time">
+              <View className="v-time month">{date[1]}</View>
+              <View className="v-time year">{date[0]}</View>
             </View>
           </View>
           <View className="content">{content}</View>

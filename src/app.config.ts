@@ -48,6 +48,14 @@ export default {
       root: 'pages/Audition',
       pages: ['index'],
     },
+    {
+      root: 'pages/ChoiceGame',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/CrossWordGame',
+      pages: ['index'],
+    },
   ],
   tabBar: {
     list: [

@@ -34,7 +34,7 @@ function RecordList(props) {
         audio_url: record_url,
         singer: nickName,
         al_pic_url:
-          'https://p2.music.126.net/fob5pHV3xzGlJ_-KEeLFLg==/109951165693966983.jpg?param=300x300',
+          'https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/music.jpg',
         audio_dt: dt,
       });
 

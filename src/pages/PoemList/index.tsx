@@ -13,6 +13,7 @@ function PoemList() {
   const [title, setTitle] = useState<string>('');
   const [desc, setDesc] = useState<string>('');
   const [list, setList] = useState<CompoList>([]);
+  const [offset, setOffset] = useState<number>(0); // 设置请求分片
 
   useEffect(() => {
     const router = getCurrentInstance().router;
@@ -35,7 +36,7 @@ function PoemList() {
         setDesc(desc);
       }
 
-      getPoemList(category)
+      getPoemList(category, offset)
         .then((res) => {
           setList(res);
         })
@@ -44,6 +45,19 @@ function PoemList() {
         });
     }
   }, []);
+
+  const handleScrollToLower = () => {
+    console.log('scroll to lower!!');
+    const curOffset = offset + 1;
+    setOffset(curOffset);
+    getPoemList(category, curOffset)
+      .then((res) => {
+        setList(list.concat(res));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   const listItem = React.memo(({ id, index, style, data }) => {
     const item = data[index];
@@ -86,7 +100,7 @@ function PoemList() {
           itemData={list} /* 渲染列表的数据 */
           itemCount={list.length} /*  渲染列表的长度 */
           itemSize={80} /* 列表单项的高度  */
-        >
+          onScrollToLower={handleScrollToLower}>
           {listItem}
         </VirtualList>
       )}

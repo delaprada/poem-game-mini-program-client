@@ -40,14 +40,20 @@ function Audition(props) {
       console.log('开始播放');
     });
 
+    innerAudioText.onCanplay(function getDuration() {
+      let intervalID = setInterval(() => {
+        console.log('onCanplay', innerAudioText.duration);
+
+        if (innerAudioText.duration !== 0) {
+          setDt(Math.ceil(innerAudioText.duration) * 1000);
+
+          clearInterval(intervalID);
+        }
+      }, 500);
+    });
+
     innerAudioText.onPause(() => {
       console.log('暂停播放');
-      console.log('dt为 ' + innerAudioText.duration);
-      if (innerAudioText.duration !== 0) {
-        console.log('dt为 ' + innerAudioText.duration);
-        setDt(innerAudioText.duration * 1000);
-      }
-      setIsPlaying(false);
     });
 
     innerAudioText.onError((e) => {

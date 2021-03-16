@@ -34,8 +34,15 @@ export type RecordingType = {
   category: number,
 }
 
+export type AnswerType = {
+  correct: string,
+  wrong: string,
+}
+
 export type CompoList = Array<CompositionType>;
 
 export type RecordListType = Array<string>;
 
 export type RecordingListType = Array<RecordingType>;
+
+export type AnswerListType = Array<AnswerType>;

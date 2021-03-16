@@ -171,8 +171,8 @@ function Search(props) {
               />
             </View>
             <View className="more" onClick={handleMore}>
-              <Text className="text">查看更多结果</Text>
-              <Text className="arrow">{poemList.length - 5}</Text>
+              <Text className="text">查看更多结果({poemList.length - 5})</Text>
+              <AtIcon value='chevron-right' size='15' color='#666'></AtIcon>
             </View>
           </View>
         ) : null}

@@ -16,12 +16,14 @@
         display: flex;
         justify-content: space-between;
 
-        .v-time {
-          font-size: 32rpx;
-          writing-mode: vertical-rl;
-          direction: rtl;
-          float: right;
-          letter-spacing: 2px;
+        .time {
+          display: flex;
+          .v-time {
+            font-size: 32rpx;
+            writing-mode: vertical-rl;
+            direction: ltr;
+            letter-spacing: 2px;
+          }
         }
       }
 
@@ -36,6 +38,8 @@
       height: 120rpx;
 
       .search-box {
+        display: flex;
+        align-items: center;
         padding: 0 10rpx;
         width: 80%;
         height: 50rpx;

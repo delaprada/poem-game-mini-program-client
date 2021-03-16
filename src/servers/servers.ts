@@ -65,9 +65,10 @@ const getCompositionList = (author_id, category) => {
   });
 };
 
-const getPoemList = (category) => {
+const getPoemList = (category, offset) => {
   return HTTPREQUEST.get('/poemList', {
     category: category,
+    offset: offset,
   });
 };
 
