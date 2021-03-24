@@ -27,7 +27,7 @@ const customInterceptor = async (chain) => {
 
         // 跳转到重新登录页面
         Taro.switchTab({
-          url: '/pages/reLogin/reLogin',
+          url: '/pages/User/index',
         });
         return Promise.reject('需要鉴权');
       }

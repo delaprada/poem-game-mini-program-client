@@ -79,7 +79,7 @@ export const getAudioInfo = (poem_id, category) => {
   return (dispatch) => {
     return new Promise((resolve, reject) => {
       getAudio(poem_id, category)
-        .then((data) => {
+        .then((data: any) => {
           if (data.length > 0) {
             dispatch(changeAudioInfo(data[0]));
             resolve(true);
@@ -97,7 +97,7 @@ export const getAudioInfo = (poem_id, category) => {
 export const getDynamicInfo = (poem_id, category) => {
   return (dispatch) => {
     getDynamic(poem_id, category)
-      .then((res) => {
+      .then((res: any) => {
         const { like, collect } = res;
         dispatch(changeLike(like));
         dispatch(changeCollect(collect));

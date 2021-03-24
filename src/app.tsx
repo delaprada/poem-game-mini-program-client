@@ -16,7 +16,7 @@ class App extends Component {
       global: true,
       family: 'FZquanfuti',
       source:
-        'url(https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/FZquanfuti1.TTF)',
+        'url(https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/FZquanfuti2.TTF)',
     });
   }
 

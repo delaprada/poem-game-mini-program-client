@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '诗人详情',
+  navigationBarTitleText: '诗人',
 };

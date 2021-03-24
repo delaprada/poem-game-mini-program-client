@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import Taro from '@tarojs/taro';
+import Taro, { useDidHide } from '@tarojs/taro';
 import { View, Image, Text, Radio } from '@tarojs/components';
 import { AtButton } from 'taro-ui';
 import { postUserInfo } from '@servers/servers';
-import loginPic from '@assets/images/loginBg.jpg';
 
 import './index.less';
 
 function Login(props) {
   const [check, setCheck] = useState(false);
   const [disable, setDisable] = useState(true);
+
+  useDidHide(() => {
+      setCheck(false);
+  });
 
   const handleChange = () => {
     setCheck(!check);
@@ -38,7 +41,10 @@ function Login(props) {
   return (
     <View className="login-container">
       <View className="image">
-        <Image src='https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/loginBg.jpg' style="width: 100%"></Image>
+        <Image
+          src="https://mini-program-1301716802.cos.ap-guangzhou.myqcloud.com/homebg.jpg"
+          style="width: 100%; height: 400rpx"
+          mode="top"></Image>
       </View>
       <View className="content">
         <View className="title-container">

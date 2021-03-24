@@ -54,6 +54,12 @@ function Player(props) {
     };
   }, []);
 
+  useEffect(() => {
+    Taro.setNavigationBarTitle({
+      title: audioInfo.audio_name,
+    });
+  }, []);
+
   const setSongInfo = (songInfo) => {
     const { audio_name, singer, al_pic_url, audio_url } = songInfo;
 

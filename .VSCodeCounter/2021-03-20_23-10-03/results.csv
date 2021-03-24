@@ -1,0 +1,120 @@
+"filename", "language", "TypeScript", "JSON", "TypeScript React", "Less", "HTML", "SCSS", "JavaScript", "comment", "blank", "total"
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\.prettierrc", "JSON", 0, 8, 0, 0, 0, 0, 0, 0, 0, 8
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\babel.config.js", "JavaScript", 0, 0, 0, 0, 0, 0, 8, 2, 1, 11
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\config\dev.js", "JavaScript", 0, 0, 0, 0, 0, 0, 23, 2, 1, 26
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\config\index.js", "JavaScript", 0, 0, 0, 0, 0, 0, 80, 0, 4, 84
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\config\prod.js", "JavaScript", 0, 0, 0, 0, 0, 0, 24, 9, 1, 34
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\global.d.ts", "TypeScript", 16, 0, 0, 0, 0, 0, 0, 1, 2, 19
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\package.json", "JSON", 0, 71, 0, 0, 0, 0, 0, 0, 1, 72
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\project.config.json", "JSON", 0, 13, 0, 0, 0, 0, 0, 0, 1, 14
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\app.config.ts", "TypeScript", 94, 0, 0, 0, 0, 0, 0, 7, 1, 102
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\app.less", "Less", 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\app.tsx", "TypeScript React", 0, 0, 25, 0, 0, 0, 0, 3, 9, 37
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\assets\global-style.less", "Less", 0, 0, 0, 22, 0, 0, 0, 3, 5, 30
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\assets\question\choice.ts", "TypeScript", 178, 0, 0, 0, 0, 0, 0, 0, 2, 180
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\assets\question\crossword.ts", "TypeScript", 249, 0, 0, 0, 0, 0, 0, 0, 2, 251
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\assets\question\identification.ts", "TypeScript", 218, 0, 0, 0, 0, 0, 0, 0, 2, 220
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\baseUI\loading\index.less", "Less", 0, 0, 0, 29, 0, 0, 0, 0, 3, 32
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\baseUI\loading\index.tsx", "TypeScript React", 0, 0, 12, 0, 0, 0, 0, 0, 4, 16
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\baseUI\progress-bar\index.less", "Less", 0, 0, 0, 3, 0, 0, 0, 0, 3, 6
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\baseUI\progress-bar\index.tsx", "TypeScript React", 0, 0, 20, 0, 0, 0, 0, 0, 5, 25
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\baseUI\search-box\index.less", "Less", 0, 0, 0, 39, 0, 0, 0, 0, 10, 49
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\baseUI\search-box\index.tsx", "TypeScript React", 0, 0, 133, 0, 0, 0, 0, 0, 19, 152
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\baseUI\vertical-item\index.less", "Less", 0, 0, 0, 18, 0, 0, 0, 0, 4, 22
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\baseUI\vertical-item\index.tsx", "TypeScript React", 0, 0, 19, 0, 0, 0, 0, 0, 6, 25
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\components\begin-game\index.less", "Less", 0, 0, 0, 78, 0, 0, 0, 0, 14, 92
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\components\begin-game\index.tsx", "TypeScript React", 0, 0, 24, 0, 0, 0, 0, 0, 9, 33
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\components\list\index.less", "Less", 0, 0, 0, 59, 0, 0, 0, 0, 14, 73
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\components\list\index.tsx", "TypeScript React", 0, 0, 63, 0, 0, 0, 0, 1, 12, 76
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\components\login\index.less", "Less", 0, 0, 0, 59, 0, 0, 0, 0, 12, 71
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\components\login\index.tsx", "TypeScript React", 0, 0, 65, 0, 0, 0, 0, 2, 9, 76
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\components\personal\index.less", "Less", 0, 0, 0, 91, 0, 0, 0, 2, 17, 110
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\components\personal\index.tsx", "TypeScript React", 0, 0, 67, 0, 0, 0, 0, 0, 8, 75
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\constants\commonType.ts", "TypeScript", 58, 0, 0, 0, 0, 0, 0, 0, 12, 70
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\custom-theme.scss", "SCSS", 0, 0, 0, 0, 0, 4, 0, 1, 2, 7
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\icon.scss", "SCSS", 0, 0, 0, 0, 0, 35, 0, 5, 1, 41
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\index.html", "HTML", 0, 0, 0, 0, 19, 0, 0, 0, 1, 20
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Audition\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Audition\index.less", "Less", 0, 0, 0, 69, 0, 0, 0, 0, 13, 82
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Audition\index.tsx", "TypeScript React", 0, 0, 130, 0, 0, 0, 0, 2, 25, 157
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\ChoiceGame\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 0, 3
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\ChoiceGame\index.less", "Less", 0, 0, 0, 71, 0, 0, 0, 0, 18, 89
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\ChoiceGame\index.tsx", "TypeScript React", 0, 0, 158, 0, 0, 0, 0, 1, 18, 177
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\CrossWordGame\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 0, 3
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\CrossWordGame\index.less", "Less", 0, 0, 0, 83, 0, 0, 0, 0, 17, 100
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\CrossWordGame\index.tsx", "TypeScript React", 0, 0, 149, 0, 0, 0, 0, 1, 18, 168
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\GameCenter\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\GameCenter\index.less", "Less", 0, 0, 0, 73, 0, 0, 0, 10, 13, 96
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\GameCenter\index.tsx", "TypeScript React", 0, 0, 27, 0, 0, 0, 0, 4, 5, 36
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Home\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Home\index.less", "Less", 0, 0, 0, 111, 0, 0, 0, 0, 22, 133
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Home\index.tsx", "TypeScript React", 0, 0, 117, 0, 0, 0, 0, 7, 14, 138
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\IdentifyGame\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 0, 3
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\IdentifyGame\index.less", "Less", 0, 0, 0, 131, 0, 0, 0, 0, 24, 155
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\IdentifyGame\index.tsx", "TypeScript React", 0, 0, 195, 0, 0, 0, 0, 5, 20, 220
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Player\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Player\index.less", "Less", 0, 0, 0, 129, 0, 0, 0, 0, 15, 144
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Player\index.tsx", "TypeScript React", 0, 0, 145, 0, 0, 0, 0, 2, 20, 167
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Player\store\actionCreators.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Player\store\constants.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Player\store\index.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Player\store\reducer.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\PoemList\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\PoemList\index.less", "Less", 0, 0, 0, 56, 0, 0, 0, 0, 13, 69
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\PoemList\index.tsx", "TypeScript React", 0, 0, 96, 0, 0, 0, 0, 0, 16, 112
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poem\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poem\index.less", "Less", 0, 0, 0, 87, 0, 0, 0, 5, 19, 111
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poem\index.tsx", "TypeScript React", 0, 0, 245, 0, 0, 0, 0, 7, 31, 283
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poem\store\actionCreators.ts", "TypeScript", 98, 0, 0, 0, 0, 0, 0, 0, 12, 110
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poem\store\constants.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 0, 5
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poem\store\index.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poem\store\reducer.ts", "TypeScript", 25, 0, 0, 0, 0, 0, 0, 0, 3, 28
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poet\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poet\index.less", "Less", 0, 0, 0, 67, 0, 0, 0, 0, 16, 83
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Poet\index.tsx", "TypeScript React", 0, 0, 85, 0, 0, 0, 0, 2, 14, 101
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\RecordList\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 0, 3
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\RecordList\index.less", "Less", 0, 0, 0, 30, 0, 0, 0, 0, 6, 36
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\RecordList\index.tsx", "TypeScript React", 0, 0, 70, 0, 0, 0, 0, 0, 11, 81
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Record\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Record\index.less", "Less", 0, 0, 0, 98, 0, 0, 0, 0, 16, 114
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Record\index.tsx", "TypeScript React", 0, 0, 159, 0, 0, 0, 0, 0, 24, 183
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Record\store\actionCreators.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 0, 2, 9
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Record\store\constants.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Record\store\index.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Record\store\reducer.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Round\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 0, 3
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Round\index.less", "Less", 0, 0, 0, 47, 0, 0, 0, 0, 6, 53
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Round\index.tsx", "TypeScript React", 0, 0, 83, 0, 0, 0, 0, 1, 12, 96
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Search\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Search\index.less", "Less", 0, 0, 0, 94, 0, 0, 0, 6, 24, 124
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Search\index.tsx", "TypeScript React", 0, 0, 217, 0, 0, 0, 0, 10, 28, 255
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Search\store\actionCreators.ts", "TypeScript", 28, 0, 0, 0, 0, 0, 0, 0, 4, 32
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Search\store\constants.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 2
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Search\store\index.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\Search\store\reducer.ts", "TypeScript", 16, 0, 0, 0, 0, 0, 0, 0, 2, 18
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\UserDynamicList\index.config.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 2
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\UserDynamicList\index.less", "Less", 0, 0, 0, 17, 0, 0, 0, 0, 4, 21
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\UserDynamicList\index.tsx", "TypeScript React", 0, 0, 56, 0, 0, 0, 0, 1, 10, 67
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\User\index.config.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\User\index.less", "Less", 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\User\index.tsx", "TypeScript React", 0, 0, 64, 0, 0, 0, 0, 40, 14, 118
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\index\index.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\index\index.less", "Less", 0, 0, 0, 4, 0, 0, 0, 0, 1, 5
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\index\index.tsx", "TypeScript React", 0, 0, 17, 0, 0, 0, 0, 3, 5, 25
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\index\store\actionCreators.ts", "TypeScript", 6, 0, 0, 0, 0, 0, 0, 0, 2, 8
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\index\store\constants.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\index\store\index.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 2, 5
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\index\store\reducer.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 0, 2, 15
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\pages\index\types.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 0, 0, 0, 4
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\servers\baseUrl.ts", "TypeScript", 19, 0, 0, 0, 0, 0, 0, 4, 2, 25
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\servers\config.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 1, 0, 14
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\servers\http.ts", "TypeScript", 40, 0, 0, 0, 0, 0, 0, 1, 9, 50
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\servers\interceptors.ts", "TypeScript", 30, 0, 0, 0, 0, 0, 0, 9, 7, 46
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\servers\servers.ts", "TypeScript", 121, 0, 0, 0, 0, 0, 0, 1, 19, 141
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\servers\types.ts", "TypeScript", 9, 0, 0, 0, 0, 0, 0, 0, 1, 10
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\store\index.ts", "TypeScript", 22, 0, 0, 0, 0, 0, 0, 2, 6, 30
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\store\reducer.ts", "TypeScript", 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\utils\config.ts", "TypeScript", 130, 0, 0, 0, 0, 0, 0, 0, 4, 134
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\src\utils\index.ts", "TypeScript", 239, 0, 0, 0, 0, 0, 0, 21, 36, 296
+"c:\Users\alice\Desktop\毕业设计\poem-game-mini-program\poem-game-mini-program-client\mini-program-client\tsconfig.json", "JSON", 0, 35, 0, 0, 0, 0, 0, 0, 1, 36
+"Total", "-", 1757, 127, 2441, 1571, 19, 39, 135, 184, 851, 7124

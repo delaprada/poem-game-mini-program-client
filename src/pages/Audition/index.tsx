@@ -88,16 +88,18 @@ function Audition(props) {
   const handleSave = () => {
     fileUpload(url, id, category, inputValue, dt);
 
-    // 无用，可能是太快跳转的原因
     Taro.showToast({
       title: '保存成功',
       icon: 'none',
       duration: 1000,
     });
 
-    Taro.navigateBack({
-      delta: 2,
-    });
+    // 设置延时使得toast可以展示完路由才跳转
+    setTimeout(() => {
+      Taro.navigateBack({
+        delta: 2,
+      });
+    }, 1000);
   };
 
   const handleChange = (value) => {

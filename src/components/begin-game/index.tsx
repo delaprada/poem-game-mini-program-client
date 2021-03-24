@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Taro from '@tarojs/taro';
-import { View, Button, Text } from '@tarojs/components';
+import { View } from '@tarojs/components';
 
 import './index.less';
 
 function BeginGame(props) {
   const [begin, setBegin] = useState<boolean>(false);
 
-  const { clickBegin } = props;
+  const { loadBegin } = props;
 
   useEffect(() => {
     setTimeout(() => {
@@ -15,7 +14,7 @@ function BeginGame(props) {
     }, 3000);
 
     setTimeout(() => {
-      clickBegin();
+      loadBegin();
     }, 4000);
   }, []);
 

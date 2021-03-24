@@ -37,7 +37,7 @@ function PoemList() {
       }
 
       getPoemList(category, offset)
-        .then((res) => {
+        .then((res: any) => {
           setList(res);
         })
         .catch((err) => {
@@ -51,7 +51,7 @@ function PoemList() {
     const curOffset = offset + 1;
     setOffset(curOffset);
     getPoemList(category, curOffset)
-      .then((res) => {
+      .then((res: any) => {
         setList(list.concat(res));
       })
       .catch((err) => {
@@ -100,7 +100,8 @@ function PoemList() {
           itemData={list} /* 渲染列表的数据 */
           itemCount={list.length} /*  渲染列表的长度 */
           itemSize={80} /* 列表单项的高度  */
-          onScrollToLower={handleScrollToLower}>
+          onScrollToLower={handleScrollToLower} /* 可传入scroll-view的方法 */
+        > 
           {listItem}
         </VirtualList>
       )}

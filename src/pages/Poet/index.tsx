@@ -10,7 +10,14 @@ import './index.less';
 
 function Poet() {
   const [category, setCategory] = useState<string>('0');
-  const [authorInfo, setAuthorInfo] = useState<AuthorType>({});
+  const [authorInfo, setAuthorInfo] = useState<AuthorType>({
+    id: 0,
+    name: '',
+    intro: '',
+    intro_l: '',
+    intro_s: '',
+    dynasty: '',
+  });
   const [compoList, setCompoList] = useState<CompoList>([]);
 
   useEffect(() => {
@@ -19,7 +26,7 @@ function Poet() {
     if (router) {
       const { id, category } = router.params;
 
-      if(category) {
+      if (category) {
         setCategory(category);
       }
 
@@ -28,6 +35,9 @@ function Poet() {
         getAuthorDetail(id, category)
           .then((res) => {
             setAuthorInfo(res[0]);
+            Taro.setNavigationBarTitle({
+              title: res[0].name,
+            });
           })
           .catch((err) => {
             console.error(err);
@@ -36,7 +46,7 @@ function Poet() {
 
       // 获取诗人作品列表
       getCompositionList(id, category)
-        .then((res) => {
+        .then((res: any) => {
           setCompoList(res);
         })
         .catch((err) => {

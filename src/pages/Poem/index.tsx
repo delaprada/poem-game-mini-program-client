@@ -22,7 +22,7 @@ function Poem(props) {
   const [showModel, setShowModel] = useState<boolean>(false);
   const [showToast, setShowToast] = useState<boolean>(false);
 
-  // 解决上一个poemInfo会短暂显示知道当前poemInfo请求完毕的问题
+  // 解决上一个poemInfo会短暂显示直到当前poemInfo请求完毕的问题
   const [show, setShow] = useState<boolean>(false);
 
   const { poemInfo: poem, authorInfo: author, like, collect } = props;
@@ -79,6 +79,9 @@ function Poem(props) {
     // 获取到当前诗词信息后再请求当前诗人信息
     if (poemInfo.id === Number(id)) {
       getAuthor(author_id, category);
+      Taro.setNavigationBarTitle({
+        title: poemInfo.title || poemInfo.chapter,
+      });
     }
   }, [category, poemInfo.id]);
 
@@ -151,9 +154,15 @@ function Poem(props) {
   };
 
   const handleRecord = () => {
-    Taro.navigateTo({
-      url: '/pages/Record/index',
-    });
+    const login = checkLogin();
+
+    if (!login) {
+      setShowModel(true);
+    } else {
+      Taro.navigateTo({
+        url: '/pages/Record/index',
+      });
+    }
   };
 
   const handleMore = () => {
@@ -180,7 +189,7 @@ function Poem(props) {
                 </View>
               ) : null}
             </View>
-            <View className="content">
+            <View className={`content ${category !== '2' ? 'center': ''} `}>
               {poemInfo.content.split('|').map((item) => {
                 return <Text>{item}</Text>;
               })}

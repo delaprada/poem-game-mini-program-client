@@ -36,7 +36,7 @@ function UserDynamicList(props) {
         setList(searchRes.poem);
       } else {
         getPersonalList(type)
-          .then((res) => {
+          .then((res: any) => {
             setList(res);
           })
           .catch((err) => {

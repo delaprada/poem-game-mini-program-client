@@ -9,15 +9,24 @@ import List from '@components/list';
 import { deduplicate } from '@utils/index';
 import { collectionList, supList } from '@utils/config';
 import { getRecommend } from '@servers/servers';
+import { CompoList, SentenceType } from '@constants/commonType';
 
 import './index.less';
 
 function Home() {
-  const [date, setDate] = useState([]);
-  const [recommendList, setRecommendList] = useState([]);
-  const [curList, setCurList] = useState([]);
-  const [index, setIndex] = useState(3);
-  const [content, setContent] = useState('');
+  const [date, setDate] = useState<Array<string | number>>([]);
+  const [recommendList, setRecommendList] = useState<CompoList>([]);
+  const [curList, setCurList] = useState<CompoList>([]);
+  const [index, setIndex] = useState<number>(3);
+  const [sentence, setSentence] = useState<SentenceType>({
+    id: 0,
+    category: 0,
+    composition_id: 0,
+    author: '',
+    title: '',
+    content: '',
+    dynasty: '',
+  });
 
   useEffect(() => {
     const token = Taro.getStorageSync('token');
@@ -36,8 +45,8 @@ function Home() {
     // 获取每日一句
     getSentence()
       .then((res) => {
-        const dailyContent = res[0].content;
-        setContent(dailyContent);
+        const dailySentence = res[0];
+        setSentence(dailySentence);
       })
       .catch((err) => {
         console.error(err);
@@ -48,7 +57,7 @@ function Home() {
 
     // 获取热门推荐
     getRecommend()
-      .then((res) => {
+      .then((res: any) => {
         const list = deduplicate(res.concat(supList));
         setRecommendList(list);
         setCurList(list.slice(index - 3, index));
@@ -57,6 +66,14 @@ function Home() {
         console.error(err);
       });
   }, []);
+
+  const handleClickSentence = () => {
+    const { category, composition_id } = sentence;
+
+    Taro.navigateTo({
+      url: `/pages/Poem/index?id=${composition_id}&category=${category}`,
+    });
+  };
 
   const handleClick = () => {
     Taro.navigateTo({
@@ -93,7 +110,9 @@ function Home() {
               <View className="v-time year">{date[0]}</View>
             </View>
           </View>
-          <View className="content">{content}</View>
+          <View className="content" onClick={handleClickSentence}>
+            {sentence.content}
+          </View>
         </View>
         <View className="search" onClick={handleClick}>
           <View className="search-box">

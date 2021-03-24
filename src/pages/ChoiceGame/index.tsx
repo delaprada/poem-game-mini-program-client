@@ -1,21 +1,33 @@
-import React, { useState } from 'react';
-import Taro from '@tarojs/taro';
+import React, { useEffect, useState } from 'react';
+import Taro, { getCurrentInstance } from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import { AtIcon, AtButton, AtModal } from 'taro-ui';
 import BeginGame from '@components/begin-game';
-import questions from '@assets/question/choice';
-import { AnswerListType } from '@constants/commonType';
+import questionStore from '@assets/question/choice';
+import { quesType, AnswerListType } from '@constants/commonType';
 
 import './index.less';
 
-function ChoiceGame(props) {
+function ChoiceGame() {
+  const [questions, setQuestions] = useState<Array<quesType>>([]);
   const [qid, setQid] = useState<number>(0);
   const [show, setShow] = useState<boolean>(false);
-  const [answerList, setAnswerList] = useState<AnswerListType>([]);
+  const [answerList, setAnswerList] = useState<AnswerListType>([]); // 问题回答情况列表
   const [correctNum, setCorrectNum] = useState<number>(0);
   const [wrongNum, setWrongNum] = useState<number>(0);
   const [showModel, setShowModel] = useState<boolean>(false);
   const [showNext, setShowNext] = useState<boolean>(false);
+  const [round, setRound] = useState<number>(0);
+
+  useEffect(() => {
+    const router = getCurrentInstance().router;
+    if (router) {
+      const { round: roundParam } = router.params;
+      const round = Number(roundParam);
+      setRound(round);
+      setQuestions(questionStore[round - 1]);
+    }
+  }, []);
 
   const handleBegin = () => {
     setShow(true);
@@ -59,15 +71,22 @@ function ChoiceGame(props) {
       setShowModel(true);
     } else {
       const curQid = qid;
-
       setQid(curQid + 1);
       setShowNext(false);
     }
   };
 
   const handleConfirm = () => {
-    Taro.switchTab({
-      url: '/pages/GameCenter/index',
+    const game = Taro.getStorageSync('game');
+    const choiceRound = game.choice;
+
+    if (choiceRound <= round) {
+      game.choice = round + 1;
+      Taro.setStorageSync('game', game);
+    }
+
+    Taro.navigateTo({
+      url: '/pages/Round/index?type=0',
     });
   };
 
@@ -78,7 +97,7 @@ function ChoiceGame(props) {
           <Text className="title">第{questions[qid].no}题</Text>
           <Text className="question">{questions[qid].stem}</Text>
           <View className="options">
-            {questions[qid].options.map((item, index) => {
+            {questions[qid].options.map((item) => {
               return (
                 <View
                   className="option"
@@ -147,7 +166,7 @@ function ChoiceGame(props) {
           </View>
         </View>
       ) : (
-        <BeginGame clickBegin={handleBegin} />
+        <BeginGame loadBegin={handleBegin} />
       )}
     </View>
   );

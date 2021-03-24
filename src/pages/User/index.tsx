@@ -55,12 +55,9 @@ function User() {
   // }, []);
 
   useDidShow(() => {
-    console.log('show here');
-
     // storage内信息除非手动删除小程序，否则一直存在
     const userInfo = Taro.getStorageSync('userInfo');
     if (userInfo) {
-      console.log('user here');
       const { nickName, avatarUrl } = userInfo;
       setAuth(true);
       setUserName(nickName);

@@ -7,7 +7,7 @@ import List from '@components/list';
 import Loading from '@baseUI/loading';
 import * as actionTypes from './store/actionCreators';
 import { getDynasty, getAuthorCategory, changeColor } from '@utils/index';
-import { RecordListType } from '@constants/commonType.ts';
+import { RecordListType } from '@constants/commonType';
 
 import './index.less';
 
@@ -170,10 +170,14 @@ function Search(props) {
                 searchText={searchText}
               />
             </View>
-            <View className="more" onClick={handleMore}>
-              <Text className="text">查看更多结果({poemList.length - 5})</Text>
-              <AtIcon value='chevron-right' size='15' color='#666'></AtIcon>
-            </View>
+            {poemList.length - 5 > 0 ? (
+              <View className="more" onClick={handleMore}>
+                <Text className="text">
+                  查看更多结果({poemList.length - 5})
+                </Text>
+                <AtIcon value="chevron-right" size="15" color="#666"></AtIcon>
+              </View>
+            ) : null}
           </View>
         ) : null}
       </View>

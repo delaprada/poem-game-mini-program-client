@@ -8,7 +8,7 @@ const login = () => {
         // 将code发送到后台，以获取token
         console.log(res.code);
         getToken(res.code)
-          .then((res) => {
+          .then((res: any) => {
             const { token } = res;
 
             console.log('获取token');
@@ -182,7 +182,7 @@ const getTitle = (item) => {
   };
 };
 
-const formatDateToMb = () => {
+const formatDateToMb: () => Array<string | number> = () => {
   let date = new Date();
   let mb_str = [
     '零',

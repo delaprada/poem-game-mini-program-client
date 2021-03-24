@@ -1,11 +1,12 @@
 @import '../../assets/global-style.less';
 
 .poem-container {
-  // position: fixed;
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
-  // right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: scroll;
   letter-spacing: 2rpx;
 
   .poem {
@@ -16,10 +17,14 @@
     width: 90%;
 
     .title {
+      display: flex;
+      justify-content: center;
       font-size: @font-size-large;
     }
 
     .author {
+      display: flex;
+      justify-content: center;
       margin-top: 20rpx;
       font-size: @font-size-base;
 
@@ -35,11 +40,14 @@
 
     .content {
       display: flex;
-      align-items: center;
       flex-direction: column;
       margin-top: 20rpx;
       font-size: @font-size-middle;
       color: @black-light;
+    }
+
+    .center {
+      align-items: center;
     }
 
     .action-list {

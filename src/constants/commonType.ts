@@ -3,8 +3,8 @@ export type PoemType = {
   author_id?: number;
   author?: string;
   title?: string;
-  chapter?: string,
-  section?: string,
+  chapter?: string;
+  section?: string;
   content: string;
 };
 
@@ -27,17 +27,48 @@ export type CompositionType = {
 };
 
 export type RecordingType = {
-  record_id: number,
-  record_name: string,
-  record_url: string,
-  poem_id: number,
-  category: number,
-}
+  record_id: number;
+  record_name: string;
+  record_url: string;
+  poem_id: number;
+  category: number;
+};
+
+export interface SentenceType {
+  id: number;
+  category: number;
+  composition_id: number;
+  author: string;
+  title: string;
+  content: string;
+  dynasty: string;
+};
 
 export type AnswerType = {
-  correct: string,
-  wrong: string,
-}
+  correct: string;
+  wrong: string;
+};
+
+export type option = {
+  content: string;
+  option: string;
+};
+
+export type quesType = {
+  answer: string;
+  stem: string;
+  options: Array<option>;
+  img: string | null;
+  no: number;
+};
+
+export type idenQuesType = {
+  answer: Array<number>;
+  stem: string;
+  options: Array<string>;
+  img: string | null;
+  no: number;
+};
 
 export type CompoList = Array<CompositionType>;
 

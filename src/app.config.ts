@@ -56,6 +56,14 @@ export default {
       root: 'pages/CrossWordGame',
       pages: ['index'],
     },
+    {
+      root: 'pages/IdentifyGame',
+      pages: ['index'],
+    },
+    {
+      root: 'pages/Round',
+      pages: ['index'],
+    },
   ],
   tabBar: {
     list: [

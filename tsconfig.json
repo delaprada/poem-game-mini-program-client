@@ -19,17 +19,33 @@
     "jsxFactory": "React.createElement",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "global.d.ts"
-    ]
+    "typeRoots": ["node_modules/@types", "global.d.ts"],
+    "paths": {
+      "@servers": ["src/servers"],
+      "@servers/servers": ["src/servers/servers.ts"],
+      "@assets": ["src/assets"],
+      "@assets/question/choice": ["src/assets/question/choice.ts"],
+      "@assets/question/crossword": ["src/assets/question/crossword.ts"],
+      "@assets/question/identification": ["src/assets/question/identification.ts"],
+      "@baseUI": ["src/baseUI"],
+      "@baseUI/vertical-item": ["src/baseUI/vertical-item"],
+      "@baseUI/progress-bar": ["src/baseUI/progress-bar"],
+      "@baseUI/loading": ["src/baseUI/loading"],
+      "@components": ["src/components"],
+      "@components/list": ["src/components/list"],
+      "@components/begin-game": ["src/components/begin-game"],
+      "@components/login": ["src/components/login"],
+      "@components/personal": ["src/components/personal"],
+      "@pages": ["src/pages"],
+      "@store": ["src/store"],
+      "@utils": ["src/utils"],
+      "@utils/index": ["src/utils/index.ts"],
+      "@utils/config": ["src/utils/config.ts"],
+      "@constants/commonType": ["src/constants/commonType.ts"],
+      "@pages/Poem/store/actionCreators": ["src/pages/Poem/store/actionCreators.ts"],
+    }
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
-  "include": [
-    "src"
-  ],
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"],
   "compileOnSave": false
 }
