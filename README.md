@@ -22,15 +22,15 @@ npm run dev:weapp
 
 |  首页   | 诗词详情  |  诗人详情   |
 |  ----  | ----  | ----  |
-| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/homepage.png)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poempage.png) |![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poetpage.png)|
+| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/homepage.PNG)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poempage.PNG) |![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poetpage.PNG)|
 |  诗词列表   | 诗词试听  | 诗词朗诵 |
-| ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poemListpage.png)  | ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/listenpage.png) |![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/langsong.png)|
+| ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poemListpage.PNG)  | ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/listenpage.PNG) |![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/langsong.PNG)|
 |  搜索   | 搜索结果  | 登录 |
-| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/searchpage.png)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/searchresultpage.png) | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/login.png) |
+| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/searchpage.PNG)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/searchresultpage.PNG) | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/login.PNG) |
 |  个人中心   | 诗词游戏  | 关卡 |
-| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/userpage.png)  | ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/gamepage.png) |![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/roundpage.png)|
+| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/userpage.PNG)  | ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/gamepage.PNG) |![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/roundpage.PNG)|
 |  选择题   | 填字游戏  | 识别游戏   |
-| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/choicegamepage.PNG)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/crosswordgamepage.PNG) |![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/identifygamepage.png)  |
+| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/choicegamepage.PNG)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/crosswordgamepage.PNG) |![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/identifygamepage.PNG)  |
 
 ## 功能列表
 
