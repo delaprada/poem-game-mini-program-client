@@ -22,7 +22,7 @@ npm run dev:weapp
 
 |  首页   | 诗词详情  |  诗人详情   |
 |  ----  | ----  | ----  |
-| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/homepage.PNG)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poempage.PNG) |![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poetpage.PNG)|
+| ![home](./images/homepage.PNG)  | ![poem](./images/poempage.PNG) |![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poetpage.PNG)|
 |  诗词列表   | 诗词试听  | 诗词朗诵 |
 | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poemListpage.PNG)  | ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/listenpage.PNG) |![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/langsong.PNG)|
 |  搜索   | 搜索结果  | 登录 |
