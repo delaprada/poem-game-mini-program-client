@@ -22,15 +22,15 @@ npm run dev:weapp
 
 |  首页   | 诗词详情  |  诗人详情   |
 |  ----  | ----  | ----  |
-| ![home](./images/homepage.PNG)  | ![poem](./images/poempage.PNG) |![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poetpage.PNG)|
+| ![home](./images/homepage.PNG)  | ![poem](./images/poempage.PNG) |![home](./images/poetpage.PNG)|
 |  诗词列表   | 诗词试听  | 诗词朗诵 |
-| ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/poemListpage.PNG)  | ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/listenpage.PNG) |![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/langsong.PNG)|
+| ![poem](./images/poemListpage.PNG)  | ![home](./images/listenpage.PNG) |![poem](./images/langsong.PNG)|
 |  搜索   | 搜索结果  | 登录 |
-| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/searchpage.PNG)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/searchresultpage.PNG) | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/login.PNG) |
+| ![home](./images/searchpage.PNG)  | ![poem](./images/searchresultpage.PNG) | ![poem](./images/login.PNG) |
 |  个人中心   | 诗词游戏  | 关卡 |
-| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/userpage.PNG)  | ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/gamepage.PNG) |![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/roundpage.PNG)|
+| ![home](./images/userpage.PNG)  | ![home](./images/gamepage.PNG) |![poem](./images/roundpage.PNG)|
 |  选择题   | 填字游戏  | 识别游戏   |
-| ![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/choicegamepage.PNG)  | ![poem](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/crosswordgamepage.PNG) |![home](https://github.com/delaprada/poem-game-mini-program-client/raw/dev/images/identifygamepage.PNG)  |
+| ![home](./images/choicegamepage.PNG)  | ![poem](./images/crosswordgamepage.PNG) |![home](./images/identifygamepage.PNG)  |
 
 ## 功能列表
 
