@@ -79,6 +79,8 @@ function Poem(props) {
     // 获取到当前诗词信息后再请求当前诗人信息
     if (poemInfo.id === Number(id)) {
       getAuthor(author_id, category);
+
+      // 设置导航栏标题
       Taro.setNavigationBarTitle({
         title: poemInfo.title || poemInfo.chapter,
       });

@@ -6,6 +6,9 @@
 
 - 古诗词数据源来自[chiness-poetry](https://github.com/chinese-poetry/chinese-poetry)开源仓库，以及对应的mysql格式数据[chinese-poetry-mysql](https://github.com/KomaBeyond/chinese-poetry-mysql)开源仓库。以上数据源的诗词均为繁体字，本项目基于数据源对数据进行简体化。
 
+## 体验
+![](./images/qrcode.png)
+
 ## 使用
 
 ```javascript
@@ -52,4 +55,8 @@ npm run dev:weapp
 
 - [ ] 诗词游戏优化（闯关逻辑）
 
-- [ ] 诗词试听优化（点击页面可以切换至诗词页） 
+- [ ] 诗词试听优化（点击页面可以切换至诗词页）
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
