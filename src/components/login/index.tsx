@@ -11,7 +11,7 @@ function Login(props) {
   const [disable, setDisable] = useState(true);
 
   useDidHide(() => {
-      setCheck(false);
+    setCheck(false);
   });
 
   const handleChange = () => {
@@ -19,17 +19,38 @@ function Login(props) {
     setDisable(check);
   };
 
-  const getUserInfo = (e) => {
-    const userInfo = e.detail.userInfo;
-    if (userInfo) {
-      // 授权成功后将用户信息发送到后台
-      postUserInfo(userInfo);
+  // const getUserInfo = (e) => {
+  //   console.log(e);
+  //   const userInfo = e.detail.userInfo;
+  //   if (userInfo) {
+  //     // 授权成功后将用户信息发送到后台
+  //     postUserInfo(userInfo);
 
-      props.changeAuth(userInfo);
-    } else {
-      // 拒絕授權
-      setCheck(false);
-    }
+  //     props.changeAuth(userInfo);
+  //   } else {
+  //     // 拒絕授權
+  //     setCheck(false);
+  //   }
+  // };
+
+  const getUserProfile = () => {
+    wx.getUserProfile({
+      desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        const userInfo = res.userInfo;
+        if (userInfo) {
+          // 授权成功后将用户信息发送到后台
+          postUserInfo(userInfo);
+          props.changeAuth(userInfo);
+        } else {
+          // 拒絕授權
+          setCheck(false);
+        }
+      },
+      fail: () => {
+        setCheck(false);
+      }
+    });
   };
 
   const handleCancel = () => {
@@ -67,9 +88,9 @@ function Login(props) {
           <AtButton
             className="button"
             type="primary"
-            openType="getUserInfo"
+            // openType="getUserInfo"
             disabled={disable}
-            onGetUserInfo={getUserInfo}>
+            onClick={getUserProfile}>
             登录
           </AtButton>
         </View>

@@ -41,6 +41,7 @@
     "@tarojs/react": "3.0.23",
     "@tarojs/runtime": "3.0.23",
     "@tarojs/taro": "3.0.23",
+    "@types/wechat-miniprogram": "^3.3.0",
     "immutable": "^4.0.0-rc.12",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",

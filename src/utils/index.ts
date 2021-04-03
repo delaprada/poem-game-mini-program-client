@@ -133,40 +133,25 @@ const getTitle = (item) => {
 
   let resStr;
 
-  switch (dynamic_type) {
-    case 0: {
-      dynamic_type = '喜欢';
-      break;
-    }
-    case 1: {
-      dynamic_type = '收藏';
-      break;
-    }
-    case 2: {
-      dynamic_type = '朗诵';
-      break;
-    }
-    default:
-      dynamic_type = '喜欢';
-      break;
-  }
+  const setType = {
+    0: () => dynamic_type = '喜欢',
+    1: () => dynamic_type = '收藏',
+    2: () => dynamic_type = '朗诵',
+    3: dynamic_type = '喜欢',
+    'default': () => dynamic_type = '喜欢',
+  };
 
-  switch (category) {
-    case 0: {
-      category = '宋词';
-    }
-    case 1: {
-      category = '诗词';
-    }
-    case 2: {
-      category = '论语';
-    }
-    case 2: {
-      category = '诗经';
-    }
-    default:
-      category = '诗词';
-  }
+  (setType[dynamic_type] || setType['default'])();
+
+  const setCategory = {
+    0: () => category = '宋词',
+    1: () => category = '诗词',
+    2: () => category = '论语',
+    3: () => category = '诗经',
+    'default': () => category = '诗词',
+  };
+
+  (setCategory[category] || setCategory['default'])();
 
   exec_time = format(exec_time);
 
