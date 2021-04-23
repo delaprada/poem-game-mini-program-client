@@ -71,21 +71,22 @@ function Search(props) {
         if (list.length > 5) {
           let flag: boolean = true;
 
-          for (let i = 0; i < list.length; ++i) {
-            if (list[i] === text) {
-              list.splice(i, 1);
+          list.forEach((cacheItem, index) => {
+            if (cacheItem === text) {
+              list.splice(index, 1);
               flag = false;
             }
-          }
+          });
+
           if (flag) {
             list.pop();
           }
         } else {
-          for (let i = 0; i < list.length; ++i) {
-            if (list[i] === text) {
-              list.splice(i, 1);
+          list.forEach((cacheItem, index) => {
+            if (cacheItem === text) {
+              list.splice(index, 1);
             }
-          }
+          });
         }
 
         list.unshift(text);

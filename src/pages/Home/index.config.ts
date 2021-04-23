@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '古诗词小程序',
+  navigationBarTitleText: '云学古诗词',
 };

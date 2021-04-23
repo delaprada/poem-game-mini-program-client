@@ -46,7 +46,8 @@ function Player(props) {
     });
     backgroundAudioManager.onEnded(() => {
       // 当前音频播放完毕后从头再播放该音频
-      setSongInfo(audioInfo);
+      // setSongInfo(audioInfo);
+      setIsPlaying(false);
     });
 
     return () => {

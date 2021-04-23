@@ -58,6 +58,10 @@ npm run dev:weapp
 
 - [ ] 诗词试听优化（点击页面可以切换至诗词页）
 
+## 系统架构
+
+![home](./images/framework.PNG)
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!

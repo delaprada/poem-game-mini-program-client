@@ -6,7 +6,7 @@ import { getSentence } from '@servers/servers';
 import { AtIcon } from 'taro-ui';
 import VerticalItem from '@baseUI/vertical-item';
 import List from '@components/list';
-import { deduplicate } from '@utils/index';
+import { uniqueElementBy } from '@utils/index';
 import { collectionList, supList } from '@utils/config';
 import { getRecommend } from '@servers/servers';
 import { CompoList, SentenceType } from '@constants/commonType';
@@ -58,7 +58,7 @@ function Home() {
     // 获取热门推荐
     getRecommend()
       .then((res: any) => {
-        const list = deduplicate(res.concat(supList));
+        const list = uniqueElementBy(res.concat(supList));
         setRecommendList(list);
         setCurList(list.slice(index - 3, index));
       })

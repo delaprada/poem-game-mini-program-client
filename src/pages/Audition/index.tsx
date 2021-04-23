@@ -86,7 +86,11 @@ function Audition(props) {
   };
 
   const handleSave = () => {
-    fileUpload(url, id, category, inputValue, dt);
+    if (inputValue) {
+      fileUpload(url, id, category, inputValue, dt);
+    } else {
+      fileUpload(url, id, category, poemInfo.title, dt);
+    }
 
     Taro.showToast({
       title: '保存成功',

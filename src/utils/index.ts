@@ -185,13 +185,16 @@ const formatDateToMb: () => Array<string | number> = () => {
     '十二',
   ];
   let y = date.getFullYear().toString();
-  let Y = '';
   let m = date.getMonth() + 1;
-  let M = mb_str[m] + '月';
-  let d = date.getDate();
-  for (let i = 0; i < y.split('').length; i++) {
-    Y = Y + mb_str[y.split('')[i]];
-  }
+  const M = mb_str[m] + '月';
+  const d = date.getDate();
+  const yearArr = y.split('');
+
+  const Y = yearArr.reduce((acc, cur) => {
+    acc = acc + mb_str[cur];
+    return acc;
+  }, '');
+
   return [Y, M, d];
 };
 
@@ -240,20 +243,18 @@ const getDynamicType = (type) => {
   }
 };
 
-const deduplicate = (arr: any[]) => {
-  const res: any[] = [];
-  const obj = {};
+const isSamePoem = (a, b) => a.id === b.id && a.category === b.category;
 
-  for (let i = 0; i < arr.length; ++i) {
-    const attr = `${arr[i].id}&${arr[i].category}`;
-    if (!obj[attr]) {
-      res.push(arr[i]);
-      obj[attr] = true;
+const uniqueElementBy = (arr) => {
+  const res = arr.reduce((acc, v) => {
+    if(!acc.some(x => isSamePoem(v, x))) {
+      acc.push(v);
     }
-  }
+    return acc;
+  }, []);
 
   return res.slice(0, 15);
-};
+}
 
 const changeColor = (text, searchText) => {
   const replaceStr = '<span>' + searchText + '</span>';
@@ -275,6 +276,6 @@ export {
   getIntro,
   getDynamicType,
   getAuthorCategory,
-  deduplicate,
+  uniqueElementBy,
   changeColor,
 };
